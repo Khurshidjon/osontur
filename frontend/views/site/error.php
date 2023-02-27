@@ -9,6 +9,15 @@ use yii\helpers\Html;
 
 $this->title = $name;
 ?>
+<style>
+    .site-error {
+        padding: 8em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
 <div class="site-error">
 
     <h1><?= Html::encode($this->title) ?></h1>

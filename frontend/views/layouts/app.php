@@ -44,7 +44,7 @@ AppAsset::register($this);
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="/">
                                     <img src="./template/img/logo.png" alt="">
                                 </a>
                             </div>
@@ -53,7 +53,7 @@ AppAsset::register($this);
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="index.html">home</a></li>
+                                        <li><a class="active" href="/">home</a></li>
                                         <li><a href="#">About</a></li>
                                         <li><a class="" href="travel_destination.html">Destination</a></li/li>
                                         <li><a href="#">pages <i class="ti-angle-down"></i></a>
