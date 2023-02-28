@@ -45,7 +45,7 @@ AppAsset::register($this);
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
                                 <a href="/">
-                                    <img src="./template/img/logo.jpg" alt="" style="width: 70px">
+                                    <?= Html::img('/template/img/logo.jpg', ['style' => 'width: 70px'])?>
                                 </a>
                             </div>
                         </div>
@@ -54,18 +54,12 @@ AppAsset::register($this);
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="active" href="/">home</a></li>
-                                        <li><a href="#">About</a></li>
-                                        <li><a class="" href="travel_destination.html">Destination</a></li/li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="destination_details.html">Destinations details</a></li>
-                                                <li><a href="elements.html">elements</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="<?= \yii\helpers\Url::toRoute(['about'])?>">About</a></li>
+                                        <li><a class="" href="<?= \yii\helpers\Url::toRoute(['destinations'])?>">Destination</a></li/li>
                                         <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
+                                                <li><a href="<?= \yii\helpers\Url::toRoute(['blog'])?>">blog</a></li>
+                                                <li><a href="<?= \yii\helpers\Url::toRoute(['single-blog'])?>">single-blog</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>

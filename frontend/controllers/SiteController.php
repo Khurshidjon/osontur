@@ -78,6 +78,59 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+
+    public function actionAbout()
+    {
+        return $this->render('pages/about');
+    }
+
+
+    public function actionDestinations()
+    {
+        return $this->render('pages/destinations');
+    }
+
+    public function actionSingleDestination()
+    {
+        return $this->render('pages/single-destination');
+    }
+
+    public function actionBlog()
+    {
+        return $this->render('pages/blog');
+    }
+
+    public function actionSingleBlog()
+    {
+        return $this->render('pages/single-blog');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Logs in a user.
      *
@@ -134,16 +187,6 @@ class SiteController extends Controller
         return $this->render('contact', [
             'model' => $model,
         ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
     }
 
     /**
