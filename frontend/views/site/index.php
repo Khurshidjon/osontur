@@ -3,6 +3,7 @@
 /** @var yii\web\View $this */
 
 $this->title = 'Osontur | Bosh sahifa';
+use yii\helpers\Url;
 ?>
 <!-- slider_area_start -->
 <div class="slider_area">
@@ -105,7 +106,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <img src="./template/img/destination/1.png" alt="">
                     </div>
                     <div class="content">
-                        <p class="d-flex align-items-center">Italy <a href="travel_destination.html">  07 Places</a> </p>
+                        <p class="d-flex align-items-center">Italy <a href="<?= Url::toRoute(['destinations'])?>">  07 Places</a> </p>
 
                     </div>
                 </div>
@@ -116,7 +117,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <img src="./template/img/destination/2.png" alt="">
                     </div>
                     <div class="content">
-                        <p class="d-flex align-items-center">Brazil <a href="travel_destination.html">  03 Places</a> </p>
+                        <p class="d-flex align-items-center">Brazil <a href="<?= Url::toRoute(['destinations'])?>">  03 Places</a> </p>
 
                     </div>
                 </div>
@@ -127,7 +128,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <img src="./template/img/destination/3.png" alt="">
                     </div>
                     <div class="content">
-                        <p class="d-flex align-items-center">America <a href="travel_destination.html">  10 Places</a> </p>
+                        <p class="d-flex align-items-center">America <a href="<?= Url::toRoute(['destinations'])?>">  10 Places</a> </p>
 
                     </div>
                 </div>
@@ -138,7 +139,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <img src="./template/img/destination/4.png" alt="">
                     </div>
                     <div class="content">
-                        <p class="d-flex align-items-center">Nepal <a href="travel_destination.html">  02 Places</a> </p>
+                        <p class="d-flex align-items-center">Nepal <a href="<?= Url::toRoute(['destinations'])?>">  02 Places</a> </p>
 
                     </div>
                 </div>
@@ -149,7 +150,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <img src="./template/img/destination/5.png" alt="">
                     </div>
                     <div class="content">
-                        <p class="d-flex align-items-center">Maldives <a href="travel_destination.html">  02 Places</a> </p>
+                        <p class="d-flex align-items-center">Maldives <a href="<?= Url::toRoute(['destinations'])?>">  02 Places</a> </p>
 
                     </div>
                 </div>
@@ -160,7 +161,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <img src="./template/img/destination/6.png" alt="">
                     </div>
                     <div class="content">
-                        <p class="d-flex align-items-center">Indonesia <a href="travel_destination.html">  05 Places</a> </p>
+                        <p class="d-flex align-items-center">Indonesia <a href="<?= Url::toRoute(['destinations'])?>">  05 Places</a> </p>
 
                     </div>
                 </div>
@@ -224,7 +225,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <a href="#" class="prise">$500</a>
                     </div>
                     <div class="place_info">
-                        <a href="destination_details.html"><h3>California</h3></a>
+                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>California</h3></a>
                         <p>United State of America</p>
                         <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -250,7 +251,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <a href="#" class="prise">$500</a>
                     </div>
                     <div class="place_info">
-                        <a href="destination_details.html"><h3>Korola Megna</h3></a>
+                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>Korola Megna</h3></a>
                         <p>United State of America</p>
                         <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -276,7 +277,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <a href="#" class="prise">$500</a>
                     </div>
                     <div class="place_info">
-                        <a href="destination_details.html"><h3>London</h3></a>
+                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>London</h3></a>
                         <p>United State of America</p>
                         <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -302,7 +303,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <a href="#" class="prise">$500</a>
                     </div>
                     <div class="place_info">
-                        <a href="destination_details.html"><h3>Miami Beach</h3></a>
+                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>Miami Beach</h3></a>
                         <p>United State of America</p>
                         <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -328,7 +329,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <a href="#" class="prise">$500</a>
                     </div>
                     <div class="place_info">
-                        <a href="destination_details.html"><h3>California</h3></a>
+                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>California</h3></a>
                         <p>United State of America</p>
                         <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -354,7 +355,7 @@ $this->title = 'Osontur | Bosh sahifa';
                         <a href="#" class="prise">$500</a>
                     </div>
                     <div class="place_info">
-                        <a href="destination_details.html"><h3>Saintmartine Iceland</h3></a>
+                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>Saintmartine Iceland</h3></a>
                         <p>United State of America</p>
                         <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
