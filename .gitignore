@@ -6,3 +6,5 @@ protected/data/*.db
 themes/classic/views/
 vendor/*
 frontend/runtime/
+frontend/web/destinationFiles
+frontend/web/toursFiles
