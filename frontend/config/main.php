@@ -12,6 +12,11 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'layout' => 'app',
+    'modules' => [
+        'admin' => [
+            'class' => 'frontend\modules\admin\Module',
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -41,6 +46,10 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '' => 'site/index',
+                'about' => 'site/about',
+                'tours' => 'site/tours',
+                'posts' => 'site/blog',
             ],
         ],
 

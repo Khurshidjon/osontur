@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use common\models\Destinations;
+use common\models\Tours;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -75,7 +77,16 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = Destinations::find();
+        $wallpapers = $model->where(['is_banner' => 1])->all();
+        $destinations = $model->all();
+
+        $tours = Tours::find()->all();
+        return $this->render('index', [
+            'wallpapers' => $wallpapers,
+            'destinations' => $destinations,
+            'tours' => $tours,
+        ]);
     }
 
 
@@ -85,14 +96,22 @@ class SiteController extends Controller
     }
 
 
-    public function actionDestinations()
+    public function actionToursList($id = null)
     {
-        return $this->render('pages/destinations');
+        $destination = Destinations::findOne($id);
+        $tours = Tours::find()->where(['destination_id' => $id])->all();
+        return $this->render('pages/destinations', [
+            'tours' => $tours,
+            'destination' => $destination,
+        ]);
     }
 
-    public function actionSingleDestination()
+    public function actionSingleDestination($id = null)
     {
-        return $this->render('pages/single-destination');
+        $tour = Tours::findOne($id);
+        return $this->render('pages/single-destination', [
+            'tour' => $tour
+        ]);
     }
 
     public function actionBlog()

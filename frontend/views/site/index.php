@@ -1,55 +1,82 @@
 <?php
 
 /** @var yii\web\View $this */
+/** @var common\models\Destinations $wallpapers */
+/** @var common\models\Destinations $destinations */
+/** @var common\models\Tours $tours */
 
 $this->title = 'Osontur | Bosh sahifa';
 use yii\helpers\Url;
+use yii\bootstrap5\Html;
+
 ?>
+<style>
+    .modal.explore_form .modal-dialog {
+        width:100%;
+        margin-right: 2em;
+        position:fixed;
+        top:0;
+        right:0;
+    }
+    .modal.explore_form .btn-primary {
+        background-color: #8f2686;
+        color: #fff;
+        border-color: #8f2686;
+    }
+</style>
 <!-- slider_area_start -->
 <div class="slider_area">
     <div class="slider_active owl-carousel">
-        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-12 col-md-12">
-                        <div class="slider_text text-center">
-                            <h3>Indonesia</h3>
-                            <p>Pixel perfect design with awesome contents</p>
-                            <a href="#" class="boxed-btn3">Explore Now</a>
+        <?php foreach ($wallpapers as $wallpaper): ?>
+            <div class="single_slider d-flex align-items-center slider_bg_1 overlay" style="background-image: url('/destinationFiles<?= $wallpaper->wallpaper ?>')">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center">
+                                <h3><?= $wallpaper->title_uz ?></h3>
+                                <p>Pixel perfect design with awesome contents</p>
+                                <button type="button" class="btn btn-primary boxed-btn3" data-toggle="modal" data-target="#staticBackdrop">Explore Now</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="single_slider  d-flex align-items-center slider_bg_2 overlay">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-12 col-md-12">
-                        <div class="slider_text text-center">
-                            <h3>Australia</h3>
-                            <p>Pixel perfect design with awesome contents</p>
-                            <a href="#" class="boxed-btn3">Explore Now</a>
-                        </div>
-                    </div>
-                </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal explore_form fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Application</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </div>
-        <div class="single_slider  d-flex align-items-center slider_bg_3 overlay">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-12 col-md-12">
-                        <div class="slider_text text-center">
-                            <h3>Switzerland</h3>
-                            <p>Pixel perfect design with awesome contents</p>
-                            <a href="#" class="boxed-btn3">Explore Now</a>
-                        </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" aria-label="FIO" placeholder="F.I.O" class="form-control">
                     </div>
-                </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">+998</span>
+                        </div>
+                        <input type="text" aria-label="Phone number" placeholder="Phone number" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
             </div>
         </div>
     </div>
-
 </div>
+
 <!-- slider_area_end -->
 
 <!-- where_togo_area_start  -->
@@ -100,72 +127,22 @@ use yii\helpers\Url;
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="single_destination">
-                    <div class="thumb">
-                        <img src="./template/img/destination/1.png" alt="">
-                    </div>
-                    <div class="content">
-                        <p class="d-flex align-items-center">Italy <a href="<?= Url::toRoute(['destinations'])?>">  07 Places</a> </p>
-
-                    </div>
+            <?php foreach ($destinations as $destination): ?>
+                <div class="col-lg-4 col-md-6">
+                    <a href="<?= Url::toRoute(['tours-list', 'id' => $destination->id])?>">
+                        <object>
+                            <div class="single_destination">
+                                <div class="thumb">
+                                    <?= Html::img('/destinationFiles/'.$destination->wallpaper); ?>
+                                </div>
+                                <div class="content">
+                                    <p class="d-flex align-items-center"><?= $destination->title_uz ?> <a href="<?= Url::toRoute(['tours-list', 'id' => $destination->id])?>">  07 Places</a> </p>
+                                </div>
+                            </div>
+                        </object>
+                    </a>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_destination">
-                    <div class="thumb">
-                        <img src="./template/img/destination/2.png" alt="">
-                    </div>
-                    <div class="content">
-                        <p class="d-flex align-items-center">Brazil <a href="<?= Url::toRoute(['destinations'])?>">  03 Places</a> </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_destination">
-                    <div class="thumb">
-                        <img src="./template/img/destination/3.png" alt="">
-                    </div>
-                    <div class="content">
-                        <p class="d-flex align-items-center">America <a href="<?= Url::toRoute(['destinations'])?>">  10 Places</a> </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_destination">
-                    <div class="thumb">
-                        <img src="./template/img/destination/4.png" alt="">
-                    </div>
-                    <div class="content">
-                        <p class="d-flex align-items-center">Nepal <a href="<?= Url::toRoute(['destinations'])?>">  02 Places</a> </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_destination">
-                    <div class="thumb">
-                        <img src="./template/img/destination/5.png" alt="">
-                    </div>
-                    <div class="content">
-                        <p class="d-flex align-items-center">Maldives <a href="<?= Url::toRoute(['destinations'])?>">  02 Places</a> </p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_destination">
-                    <div class="thumb">
-                        <img src="./template/img/destination/6.png" alt="">
-                    </div>
-                    <div class="content">
-                        <p class="d-flex align-items-center">Indonesia <a href="<?= Url::toRoute(['destinations'])?>">  05 Places</a> </p>
-
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
@@ -218,16 +195,17 @@ use yii\helpers\Url;
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="single_place">
-                    <div class="thumb">
-                        <img src="./template/img/place/1.png" alt="">
-                        <a href="#" class="prise">$500</a>
-                    </div>
-                    <div class="place_info">
-                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>California</h3></a>
-                        <p>United State of America</p>
-                        <div class="rating_days d-flex justify-content-between">
+            <?php foreach ($tours as $tour): ?>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_place">
+                        <div class="thumb">
+                            <?= Html::img('/toursFiles'.$tour->wallpaper)?>
+                            <a href="#" class="prise">$<?= $tour->price ?></a>
+                        </div>
+                        <div class="place_info">
+                            <a href="<?= Url::toRoute(['single-destination', 'id' => $tour->id])?>"><h3><?= $tour->title_uz ?></h3></a>
+                            <p><?= $tour->destination ? $tour->destination->title_uz : '' ?></p>
+                            <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
                                      <i class="fa fa-star"></i>
                                      <i class="fa fa-star"></i>
@@ -236,144 +214,15 @@ use yii\helpers\Url;
                                      <i class="fa fa-star"></i>
                                      <a href="#">(20 Review)</a>
                                 </span>
-                            <div class="days">
-                                <i class="fa fa-clock-o"></i>
-                                <a href="#">5 Days</a>
+                                <div class="days">
+                                    <i class="fa fa-clock-o"></i>
+                                    <a href="#"><?= $tour->days ?> Days</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_place">
-                    <div class="thumb">
-                        <img src="./template/img/place/2.png" alt="">
-                        <a href="#" class="prise">$500</a>
-                    </div>
-                    <div class="place_info">
-                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>Korola Megna</h3></a>
-                        <p>United State of America</p>
-                        <div class="rating_days d-flex justify-content-between">
-                                <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <a href="#">(20 Review)</a>
-                                </span>
-                            <div class="days">
-                                <i class="fa fa-clock-o"></i>
-                                <a href="#">5 Days</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_place">
-                    <div class="thumb">
-                        <img src="./template/img/place/3.png" alt="">
-                        <a href="#" class="prise">$500</a>
-                    </div>
-                    <div class="place_info">
-                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>London</h3></a>
-                        <p>United State of America</p>
-                        <div class="rating_days d-flex justify-content-between">
-                                <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <a href="#">(20 Review)</a>
-                                </span>
-                            <div class="days">
-                                <i class="fa fa-clock-o"></i>
-                                <a href="#">5 Days</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_place">
-                    <div class="thumb">
-                        <img src="./template/img/place/4.png" alt="">
-                        <a href="#" class="prise">$500</a>
-                    </div>
-                    <div class="place_info">
-                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>Miami Beach</h3></a>
-                        <p>United State of America</p>
-                        <div class="rating_days d-flex justify-content-between">
-                                <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <a href="#">(20 Review)</a>
-                                </span>
-                            <div class="days">
-                                <i class="fa fa-clock-o"></i>
-                                <a href="#">5 Days</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_place">
-                    <div class="thumb">
-                        <img src="./template/img/place/5.png" alt="">
-                        <a href="#" class="prise">$500</a>
-                    </div>
-                    <div class="place_info">
-                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>California</h3></a>
-                        <p>United State of America</p>
-                        <div class="rating_days d-flex justify-content-between">
-                                <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <a href="#">(20 Review)</a>
-                                </span>
-                            <div class="days">
-                                <i class="fa fa-clock-o"></i>
-                                <a href="#">5 Days</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_place">
-                    <div class="thumb">
-                        <img src="./template/img/place/6.png" alt="">
-                        <a href="#" class="prise">$500</a>
-                    </div>
-                    <div class="place_info">
-                        <a href="<?= Url::toRoute(['single-destination'])?>"><h3>Saintmartine Iceland</h3></a>
-                        <p>United State of America</p>
-                        <div class="rating_days d-flex justify-content-between">
-                                <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <a href="#">(20 Review)</a>
-                                </span>
-                            <div class="days">
-                                <i class="fa fa-clock-o"></i>
-                                <a href="#">5 Days</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
         <div class="row">
             <div class="col-lg-12">

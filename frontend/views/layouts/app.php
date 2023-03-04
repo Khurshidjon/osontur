@@ -53,16 +53,18 @@ AppAsset::register($this);
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="/">home</a></li>
-                                        <li><a href="<?= \yii\helpers\Url::toRoute(['about'])?>">About</a></li>
-                                        <li><a class="" href="<?= \yii\helpers\Url::toRoute(['destinations'])?>">Destination</a></li/li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="<?= \yii\helpers\Url::toRoute(['blog'])?>">blog</a></li>
-                                                <li><a href="<?= \yii\helpers\Url::toRoute(['single-blog'])?>">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <?php foreach (\common\models\Menus::find()->all() as $value): ?>
+                                            <li><a class="active" href="<?= $value->link_path ?>"><?= $value->title_uz?></a></li>
+                                        <?php endforeach;?>
+<!--                                        <li><a href="--><?//= \yii\helpers\Url::toRoute(['about'])?><!--">About</a></li>-->
+<!--                                        <li><a class="" href="--><?//= \yii\helpers\Url::toRoute(['destinations'])?><!--">Destination</a></li/li>-->
+<!--                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>-->
+<!--                                            <ul class="submenu">-->
+<!--                                                <li><a href="--><?//= \yii\helpers\Url::toRoute(['blog'])?><!--">blog</a></li>-->
+<!--                                                <li><a href="--><?//= \yii\helpers\Url::toRoute(['single-blog'])?><!--">single-blog</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+<!--                                        <li><a href="/contacts">Contact</a></li>-->
                                     </ul>
                                 </nav>
                             </div>
@@ -70,7 +72,7 @@ AppAsset::register($this);
                         <div class="col-xl-4 col-lg-4 d-none d-lg-block">
                             <div class="social_wrap d-flex align-items-center justify-content-end">
                                 <div class="number">
-                                    <p> <i class="fa fa-phone"></i> 10(256)-928 256</p>
+                                    <p> <i class="fa fa-phone"></i> 998 (90) 399 11 33</p>
                                 </div>
                                 <div class="social_links d-none d-xl-block">
                                     <ul>
@@ -104,16 +106,17 @@ AppAsset::register($this);
     <div class="footer_top">
         <div class="container">
             <div class="row">
-                <div class="col-xl-4 col-md-6 col-lg-4 ">
+                <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="footer_widget">
                         <div class="footer_logo">
                             <a href="#">
-                                <img src="./template/img/footer_logo.png" alt="">
+                                <img src="./template/img/logo.jpg" alt="" width="120">
                             </a>
                         </div>
-                        <p>5th flora, 700/D kings road, green <br> lane New York-1782 <br>
-                            <a href="#">+10 367 826 2567</a> <br>
-                            <a href="#">contact@carpenter.com</a>
+                        <p>Toshkent shahri, Mirobod tumani, <br> AFROSIYOB KO'CHASI, FAROVON MFY, 14/2-UY <br>
+                            <a href="tel:+998903991133">+998(90) 399 11 33</a> <br>
+                            <a href="tel:+998903991166">+998(90) 399 11 66</a> <br>
+                            <a href="#">info@osontur.uz</a>
                         </p>
                         <div class="socail_links">
                             <ul>
@@ -147,75 +150,52 @@ AppAsset::register($this);
 
                     </div>
                 </div>
-                <div class="col-xl-2 col-md-6 col-lg-2">
+                <div class="col-xl-8 col-md-6 col-lg-8">
                     <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Company
-                        </h3>
-                        <ul class="links">
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#"> Gallery</a></li>
-                            <li><a href="#"> Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 col-lg-3">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Popular destination
-                        </h3>
-                        <ul class="links double_links">
-                            <li><a href="#">Indonesia</a></li>
-                            <li><a href="#">America</a></li>
-                            <li><a href="#">India</a></li>
-                            <li><a href="#">Switzerland</a></li>
-                            <li><a href="#">Italy</a></li>
-                            <li><a href="#">Canada</a></li>
-                            <li><a href="#">Franch</a></li>
-                            <li><a href="#">England</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 col-lg-3">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Instagram
-                        </h3>
-                        <div class="instagram_feed">
-                            <div class="single_insta">
-                                <a href="#">
-                                    <img src="./template/img/instagram/1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="single_insta">
-                                <a href="#">
-                                    <img src="./template/img/instagram/2.png" alt="">
-                                </a>
-                            </div>
-                            <div class="single_insta">
-                                <a href="#">
-                                    <img src="./template/img/instagram/3.png" alt="">
-                                </a>
-                            </div>
-                            <div class="single_insta">
-                                <a href="#">
-                                    <img src="./template/img/instagram/4.png" alt="">
-                                </a>
-                            </div>
-                            <div class="single_insta">
-                                <a href="#">
-                                    <img src="./template/img/instagram/5.png" alt="">
-                                </a>
-                            </div>
-                            <div class="single_insta">
-                                <a href="#">
-                                    <img src="./template/img/instagram/6.png" alt="">
-                                </a>
-                            </div>
+                        <div style="position:relative;overflow:hidden;">
+                            <a href="https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Toshkent</a><a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdAFpT0cFQFprfX54eX9qYg==/?ll=69.270371%2C41.298402&utm_medium=mapframe&utm_source=maps&z=17.78" style="color:#eee;font-size:12px;position:absolute;top:14px;">Afrosiyob koʻchasi, 14/2 — Yandex Xarita</a><iframe src="https://yandex.uz/map-widget/v1/?ll=69.270371%2C41.298402&mode=whatshere&whatshere%5Bpoint%5D=69.269464%2C41.298479&whatshere%5Bzoom%5D=17&z=17.78" width="100%" height="360" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe>
                         </div>
                     </div>
                 </div>
+<!--                <div class="col-xl-3 col-md-6 col-lg-3">-->
+<!--                    <div class="footer_widget">-->
+<!--                        <h3 class="footer_title">-->
+<!--                            Instagram-->
+<!--                        </h3>-->
+<!--                        <div class="instagram_feed">-->
+<!--                            <div class="single_insta">-->
+<!--                                <a href="#">-->
+<!--                                    <img src="./template/img/instagram/1.png" alt="">-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="single_insta">-->
+<!--                                <a href="#">-->
+<!--                                    <img src="./template/img/instagram/2.png" alt="">-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="single_insta">-->
+<!--                                <a href="#">-->
+<!--                                    <img src="./template/img/instagram/3.png" alt="">-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="single_insta">-->
+<!--                                <a href="#">-->
+<!--                                    <img src="./template/img/instagram/4.png" alt="">-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="single_insta">-->
+<!--                                <a href="#">-->
+<!--                                    <img src="./template/img/instagram/5.png" alt="">-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="single_insta">-->
+<!--                                <a href="#">-->
+<!--                                    <img src="./template/img/instagram/6.png" alt="">-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
     </div>

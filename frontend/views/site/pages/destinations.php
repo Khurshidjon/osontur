@@ -1,6 +1,9 @@
 <?php
+
 use yii\bootstrap5\Html;
 use yii\helpers\Url;
+/** @var common\models\Tours $tours*/
+/** @var common\models\Destinations $destination*/
 ?>
 
 <!-- bradcam_area  -->
@@ -9,7 +12,7 @@ use yii\helpers\Url;
         <div class="row">
             <div class="col-xl-12">
                 <div class="bradcam_text text-center">
-                    <h3>Destinations</h3>
+                    <h3><?= $destination->title_uz ?></h3>
                     <p>Pixel perfect design with awesome contents</p>
                 </div>
             </div>
@@ -44,7 +47,7 @@ use yii\helpers\Url;
                             </select>
                         </div>
                         <div class="search_btn">
-                            <button class="boxed-btn4 " type="submit" >Search</button>
+                            <button class="boxed-btn4 " type="submit">Search</button>
                         </div>
                     </form>
                 </div>
@@ -58,214 +61,37 @@ use yii\helpers\Url;
 <div class="popular_places_area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="filter_result_wrap">
-                    <h3>Filter Result</h3>
-                    <div class="filter_bordered">
-                        <div class="filter_inner">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="single_select">
-                                        <select>
-                                            <option data-display="Country">Country</option>
-                                            <option value="1">Africa</option>
-                                            <option value="2">canada</option>
-                                            <option value="4">USA</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="single_select">
-                                        <select>
-                                            <option data-display="Travel type">Travel type</option>
-                                            <option value="1">advance</option>
-                                            <option value="2">advance</option>
-                                            <option value="4">premium</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="range_slider_wrap">
-                                        <span class="range">Prise range</span>
-                                        <div id="slider-range"></div>
-                                        <p>
-                                            <input type="text" id="amount" readonly style="border:0; color:#7A838B; font-weight:400;">
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        <div class="reset_btn">
-                            <button class="boxed-btn4" type="submit">Reset</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single_place">
-                            <div class="thumb">
-                                <?= Html::img('/template/img/place/1.png'); ?>
-                                <a href="#" class="prise">$500</a>
-                            </div>
-                            <div class="place_info">
-                                <a href="<?= Url::toRoute(['single-destination'])?>"><h3>California</h3></a>
-                                <p>United State of America</p>
-                                <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                    <div class="days">
-                                        <i class="fa fa-clock-o"></i>
-                                        <a href="#">5 Days</a>
+                    <?php foreach ($tours as $tour): ?>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="single_place">
+                                <div class="thumb">
+                                    <?= Html::img('/toursFiles' . $tour->wallpaper) ?>
+                                    <a href="#" class="prise">$<?= $tour->price ?></a>
+                                </div>
+                                <div class="place_info">
+                                    <a href="<?= Url::toRoute(['single-destination', 'id' => $tour->id]) ?>">
+                                        <h3><?= $tour->title_uz ?></h3></a>
+                                    <p><?= $tour->destination ? $tour->destination->title_uz : '' ?></p>
+                                    <div class="rating_days d-flex justify-content-between">
+                                <span class="d-flex justify-content-center align-items-center">
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <a href="#">(20 Review)</a>
+                                </span>
+                                        <div class="days">
+                                            <i class="fa fa-clock-o"></i>
+                                            <a href="#"><?= $tour->days ?> Days</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single_place">
-                            <div class="thumb">
-                                <?= Html::img('/template/img/place/2.png'); ?>
-                                <a href="#" class="prise">$500</a>
-                            </div>
-                            <div class="place_info">
-                                <a href="<?= Url::toRoute(['single-destination'])?>"><h3>Korola Megna</h3></a>
-                                <p>United State of America</p>
-                                <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                    <div class="days">
-                                        <i class="fa fa-clock-o"></i>
-                                        <a href="#">5 Days</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single_place">
-                            <div class="thumb">
-                                <?= Html::img('/template/img/place/3.png'); ?>
-                                <a href="#" class="prise">$500</a>
-                            </div>
-                            <div class="place_info">
-                                <a href="<?= Url::toRoute(['single-destination'])?>"><h3>London</h3></a>
-
-                                <p>United State of America</p>
-                                <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                    <div class="days">
-                                        <i class="fa fa-clock-o"></i>
-                                        <a href="#">5 Days</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single_place">
-                            <div class="thumb">
-                                <?= Html::img('/template/img/place/4.png'); ?>
-                                <a href="#" class="prise">$500</a>
-                            </div>
-                            <div class="place_info">
-                                <a href="<?= Url::toRoute(['single-destination'])?>"><h3>Miami Beach</h3></a>
-
-                                <p>United State of America</p>
-                                <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                    <div class="days">
-                                        <i class="fa fa-clock-o"></i>
-                                        <a href="#">5 Days</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single_place">
-                            <div class="thumb">
-                                <?= Html::img('/template/img/place/5.png'); ?>
-                                <a href="#" class="prise">$500</a>
-                            </div>
-                            <div class="place_info">
-                                <a href="<?= Url::toRoute(['single-destination'])?>"><h3>California</h3></a>
-
-                                <p>United State of America</p>
-                                <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                    <div class="days">
-                                        <i class="fa fa-clock-o"></i>
-                                        <a href="#">5 Days</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single_place">
-                            <div class="thumb">
-                                <?= Html::img('/template/img/place/6.png'); ?>
-                                <a href="#" class="prise">$500</a>
-                            </div>
-                            <div class="place_info">
-                                <a href="<?= Url::toRoute(['single-destination'])?>"><h3>Saintmartine Iceland</h3></a>
-
-                                <p>United State of America</p>
-                                <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                    <div class="days">
-                                        <i class="fa fa-clock-o"></i>
-                                        <a href="#">5 Days</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -297,12 +123,12 @@ use yii\helpers\Url;
                             <div class="row no-gutters">
                                 <div class="col-lg-9 col-md-8">
                                     <div class="newsletter_field">
-                                        <input type="email" placeholder="Your mail" >
+                                        <input type="email" placeholder="Your mail">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4">
                                     <div class="newsletter_btn">
-                                        <button class="boxed-btn4 " type="submit" >Subscribe</button>
+                                        <button class="boxed-btn4 " type="submit">Subscribe</button>
                                     </div>
                                 </div>
                             </div>
