@@ -50,6 +50,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'about' => 'site/about',
+                'tours' => 'site/tours',
                 'tours-list' => 'site/tours-list',
                 'posts' => 'site/blog',
 //

@@ -89,11 +89,6 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionReplace($lang = null)
-    {
-        die();
-    }
-
 
     public function actionAbout()
     {
@@ -104,7 +99,12 @@ class SiteController extends Controller
     public function actionToursList($id = null)
     {
         $destination = Destinations::findOne($id);
-        $tours = Tours::find()->where(['destination_id' => $id])->all();
+        $model = Tours::find();
+        if ($id){
+            $tours = Tours::find()->where(['destination_id' => $id])->all();
+        }else{
+            $tours = Tours::find()->all();
+        }
         return $this->render('pages/destinations', [
             'tours' => $tours,
             'destination' => $destination,
