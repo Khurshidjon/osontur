@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Applications;
 use common\models\Destinations;
 use common\models\TelegramUser;
 use common\models\Tours;
@@ -9,6 +10,7 @@ use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
+use yii\captcha\Captcha;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -91,14 +93,27 @@ class SiteController extends Controller
         $wallpapers = $model->where(['is_banner' => 1])->all();
         $destinations = $model->all();
 
+        $application = new Applications();
+        if ($this->request->isPost) {
+            if ($application->load($this->request->post())) {
+                $application->save();
+                return $this->response->redirect('/');
+            }
+        }
+
         $tours = Tours::find()->all();
         return $this->render('index', [
             'wallpapers' => $wallpapers,
             'destinations' => $destinations,
             'tours' => $tours,
+            'application' => $application,
         ]);
     }
 
+    public function actionRefreshCaptcha()
+    {
+        return Captcha::widget();
+    }
 
     public function actionAbout()
     {

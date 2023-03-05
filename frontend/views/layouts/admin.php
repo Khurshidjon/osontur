@@ -124,6 +124,8 @@ AdminAsset::register($this);
                                         class="w-fa far fa-bell"></i>Destinations</a></li>
                         <li><a href="/admin/tours" class="collapsible-header waves-effect"><i
                                         class="w-fa far fa-bell"></i>Tours</a></li>
+                        <li><a href="/admin/application" class="collapsible-header waves-effect"><i
+                                        class="w-fa far fa-bell"></i>Applications <span class="badge badge-danger badge-pill"><?= \common\models\Applications::find()->count()?></span> </a></li>
                     </ul>
                 </li>
                 <!-- Side navigation links -->

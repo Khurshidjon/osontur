@@ -21,7 +21,9 @@
         "kartik-v/yii2-widget-fileinput": "dev-master",
         "mihaildev/yii2-ckeditor": "*",
         "skeeks/yii2-multi-language": "^1.0.0",
-        "aki/yii2-bot-telegram": "*"
+        "aki/yii2-bot-telegram": "*",
+        "lubosdz/yii2-captcha-extended": "~1.0.0",
+        "himiklab/yii2-recaptcha-widget": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
