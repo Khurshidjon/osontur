@@ -11,6 +11,7 @@ $this->title = 'Osontur | Bosh sahifa';
 use yii\helpers\Url;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\ActiveForm;
+use himiklab\yii2\recaptcha\ReCaptcha;
 
 //$lang = Yii::$app->language;
 //echo Url::to(['/module/controller/action', 'lang' => $lang])
@@ -79,9 +80,9 @@ use yii\bootstrap5\ActiveForm;
                         {input}{error}{hint}</div>'
                 ])->textInput(['placeholder' => "Phone number"])->label(false); ?>
 
-                <?= $form->field($application, 'reCaptcha')->widget(
-                        \himiklab\yii2\recaptcha\ReCaptcha::className(),
-                        ['siteKey' => '6Ld3x9QkAAAAAD2mQ9VYFemkItUqNN84Hfigm0CQ']) ?>
+                <?= $form->field($application, 'reCaptcha')->widget(ReCaptcha::className(),[
+                        'siteKey' => '6Lfj2NQkAAAAAKOAbf7wxT39eiwJ-bghs9Rgv-sK'
+                ]) ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

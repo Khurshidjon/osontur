@@ -44,7 +44,7 @@ class Applications extends \yii\db\ActiveRecord
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['fio', 'phone_number'], 'string', 'max' => 255],
             [['fio', 'phone_number'], 'required'],
-            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className(), 'secret' => '6Ld3x9QkAAAAAOkAPkKSiOyE90aVZy1gTzVQGlJc']
+            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className(), 'secret' => '6Lfj2NQkAAAAAFBFzBCjxOMHIsi4zh_BgVt8Kf_P']
         ];
     }
 
