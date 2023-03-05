@@ -96,9 +96,10 @@ class SiteController extends Controller
         $application = new Applications();
         if ($this->request->isPost) {
             if ($application->load($this->request->post())) {
-                $application->save();
-                $this->actionBooking($application->fio, $application->phone_number);
-                return $this->response->redirect('/');
+                if ($application->save()){
+                    $this->actionBooking($application->fio, $application->phone_number);
+                    return $this->response->redirect('/');
+                }
             }
         }
 
