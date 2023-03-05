@@ -82,7 +82,7 @@ AppAsset::register($this);
                                     <?php
                                         $lang = '/'.  Yii::$app->language != 'uz' ?  Yii::$app->language : '';
 
-                                        $currentUrl = Yii::$app->request->url != '/site/index' ? Yii::$app->request->url : '' ;
+                                        $currentUrl = Yii::$app->request->url ;
                                     ?>
                                     <ul id="navigation">
                                         <?php foreach (Menus::find()->all() as $value): ?>
@@ -97,7 +97,6 @@ AppAsset::register($this);
                                 <div class="btn-group dropleft mr-4">
                                     <button type="button" class="boxed-btn4 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <?= Yii::$app->language ?>
-<!--                                        --><?//= Yii::$app->request->url ?>
                                     </button>
                                     <div class="dropdown-menu">
                                        <ul class="custom-list">
