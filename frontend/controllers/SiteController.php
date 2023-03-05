@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Destinations;
+use common\models\TelegramUser;
 use common\models\Tours;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -127,6 +128,61 @@ class SiteController extends Controller
     public function actionSingleBlog()
     {
         return $this->render('pages/single-blog');
+    }
+
+    public function actionBooking()
+    {
+        $chat_id = '631141690';
+        $text = '';
+        $text .= "<b>Yangi buyurtma</b>\n\n";
+        $text .= "<b>FIO: </b> Ergashev Xurshid Ergash o'g'li \n";
+        $text .= "<b>Tel: </b> +998990005795 \n";
+        $text .= "\n\n";
+        $text .= "<b>Agar yuborilgan raqam telegramda mavjuda bo'lsa unga yozish: </b> https://t.me/+998990005795";
+
+        Yii::$app->telegram->sendMessage([
+            'chat_id' => $chat_id,
+            'text' => $text,
+            'parse_mode' => 'HTML'
+        ]);
+    }
+
+    public function actionBot()
+    {
+        $telegram = Yii::$app->telegram;
+        $text = $telegram->input->message->text;
+        $username = $telegram->input->message->chat->username;
+        $first_name = $telegram->input->message->chat->first_name;
+        $telegram_id = $telegram->input->message->chat->id;
+        $user = TelegramUser::find()->where(['telegram_id' => $telegram_id])->one();
+        $message_id = $telegram->input->message->message_id;
+//        $telegram_response = Yii::$app->telegram_response;
+
+        $msg = $telegram->update->callback_query;
+        if (!$user) {
+            $model = new TelegramUser();
+            $model->telegram_id = $telegram_id;
+            $model->username = $username;
+            $model->first_name = $first_name;
+            $model->save(false);
+        }
+        if ($text == "/start") {
+            $telegram->sendMessage([
+                'chat_id' => $telegram_id,
+                'text' => "Assalomu alaykum ". $first_name,
+            ]);
+        }
+//        $query_id = $telegram->input->callback_query->id;
+//        $telegram->sendMessage([
+//            'chat_id' => 631141690,
+//            'text' => $query_id,
+//        ]);
+//        Yii::$app->telegram->answerCallbackQuery([
+//            'callback_query_id' => $query_id, //require
+//            'text' => 'text', //Optional
+//            'show_alert' => 'my alert',  //Optional
+////           'cache_time' => 123231,  //Optional
+//        ]);
     }
 
 

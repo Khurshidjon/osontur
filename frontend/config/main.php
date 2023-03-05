@@ -19,6 +19,10 @@ return [
     ],
     'language' => 'uz',
     'components' => [
+        'telegram' => [
+            'class' => 'aki\telegram\Telegram',
+            'botToken' => '6264790283:AAGFeIBdwHato4ByvjDi0AdNB5nAflLOQJM',
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
@@ -53,19 +57,6 @@ return [
                 'tours' => 'site/tours',
                 'tours-list' => 'site/tours-list',
                 'posts' => 'site/blog',
-//
-//                '<language:\w+>/<controller>/<action>/<id:\d+>/<title>' => '<controller>/<action>',
-//
-//                '<language:\w+>/<controller>/<id:\d+>/<title>' => '<controller>/index',
-//
-//                '<language:\w+>/<controller>/<action>/<id:\d+>' => '<controller>/<action>',
-//
-//                '<language:\w+>/<controller>/<action>' => '<controller>/<action>',
-//
-//                '<language:\w+>/<controller>' => '<controller>',
-//
-//                '<language:\w+>/index'=>'site/index',
-
             ],
         ],
 

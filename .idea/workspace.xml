@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6826ea-8346-48c3-bc01-4163348a681c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/osontur.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/osontur.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/messages/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/en/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/messages/ru/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/ru/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/messages/uz/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/uz/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +138,10 @@
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-fileinput" />
       <path value="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor" />
       <path value="$PROJECT_DIR$/vendor/skeeks/yii2-multi-language" />
+      <path value="$PROJECT_DIR$/vendor/aki/yii2-bot-telegram" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
     </include_path>
   </component>
   <component name="ProjectId" id="2MJAd5D1pDvMmHwYtJi6WqBsdaS" />
@@ -148,7 +154,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../old/Yii2/ict" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -184,7 +190,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677475395758</updated>
       <workItem from="1677475397179" duration="20080000" />
-      <workItem from="1677840747215" duration="49015000" />
+      <workItem from="1677840747215" duration="51243000" />
     </task>
     <servers />
   </component>
@@ -242,14 +248,14 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="674" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1677502768527" />
-    <state x="2610" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1677932378626">
+    <state x="2610" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1678010839512">
       <screen x="1920" y="0" width="1920" height="1032" />
     </state>
-    <state x="2610" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1677932378626" />
-    <state x="2660" y="271" key="FileChooserDialogImpl" timestamp="1677850147642">
+    <state x="2610" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1678010839512" />
+    <state x="2660" y="271" key="FileChooserDialogImpl" timestamp="1678010270041">
       <screen x="1920" y="0" width="1920" height="1032" />
     </state>
-    <state x="2660" y="271" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1677850147642" />
+    <state x="2660" y="271" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1678010270041" />
     <state x="2714" y="439" key="NewPhpFileDialog" timestamp="1677931872383">
       <screen x="1920" y="0" width="1920" height="1032" />
     </state>
