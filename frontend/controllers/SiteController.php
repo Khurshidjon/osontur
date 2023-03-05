@@ -161,7 +161,7 @@ class SiteController extends Controller
         $text .= "<b>FIO: </b>$fio\n";
         $text .= "<b>Tel: </b> +998$phone \n";
         $text .= "\n\n";
-        $text .= "<b>Agar yuborilgan raqam telegramda mavjud bo'lsa unga yozish: </b>".trim("https://t.me/+998".$phone);
+        $text .= "<b>Agar yuborilgan raqam telegramda mavjud bo'lsa unga yozish: </b>". str_replace("", "", "https://t.me/+998".$phone);
 
         foreach ($admins as $admin){
             $chat_id = $admin->telegram_id;
