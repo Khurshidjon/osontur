@@ -36,8 +36,8 @@ use yii\bootstrap5\Html;
                         <div class="col-xl-12 col-md-12">
                             <div class="slider_text text-center">
                                 <h3><?= $wallpaper->title_uz ?></h3>
-                                <p>Pixel perfect design with awesome contents</p>
-                                <button type="button" class="btn btn-primary boxed-btn3" data-toggle="modal" data-target="#staticBackdrop">Explore Now</button>
+                                <p><?= Yii::t('app', 'travel_with_us')?></p>
+                                <button type="button" class="btn btn-primary boxed-btn3" data-toggle="modal" data-target="#staticBackdrop"><?= Yii::t('app', 'booking')?></button>
                             </div>
                         </div>
                     </div>
@@ -87,27 +87,27 @@ use yii\bootstrap5\Html;
         <div class="row align-items-center">
             <div class="col-lg-3">
                 <div class="form_area">
-                    <h3>Where you want to go?</h3>
+                    <h3><?= Yii::t('app', 'where_want')?></h3>
                 </div>
             </div>
             <div class="col-lg-9">
                 <div class="search_wrap">
                     <form class="search_form" action="#">
                         <div class="input_field">
-                            <input type="text" placeholder="Where to go?">
+                            <input type="text" placeholder="<?= Yii::t('app', 'where_want_place')?>">
                         </div>
                         <div class="input_field">
-                            <input id="datepicker" placeholder="Date">
+                            <input id="datepicker" placeholder="<?= Yii::t('app', 'where_want_date')?>">
                         </div>
                         <div class="input_field">
                             <select>
-                                <option data-display="Travel type">Travel type</option>
+                                <option data-display="<?= Yii::t('app', 'where_want_type')?>"><?= Yii::t('app', 'where_want_type')?></option>
                                 <option value="1">Some option</option>
                                 <option value="2">Another option</option>
                             </select>
                         </div>
                         <div class="search_btn">
-                            <button class="boxed-btn4 " type="submit" >Search</button>
+                            <button class="boxed-btn4 " type="submit" ><?= Yii::t('app', 'search_button')?></button>
                         </div>
                     </form>
                 </div>
@@ -123,8 +123,8 @@ use yii\bootstrap5\Html;
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section_title text-center mb_70">
-                    <h3>Popular Destination</h3>
-                    <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
+                    <h3><?= Yii::t('app', 'popular_dests')?></h3>
+                    <p><?= Yii::t('app', 'lets_go')?></p>
                 </div>
             </div>
         </div>
@@ -154,13 +154,12 @@ use yii\bootstrap5\Html;
 <div class="newletter_area overlay">
     <div class="container">
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <div class="row align-items-center">
                     <div class="col-lg-5">
                         <div class="newsletter_text">
-                            <h4>Subscribe Our Newsletter</h4>
-                            <p>Subscribe newsletter to get offers and about
-                                new places to discover.</p>
+                            <h4><?= Yii::t('app', 'subscribe_title')?></h4>
+                            <p><?= Yii::t('app', 'subscribe_description')?></p>
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -168,12 +167,12 @@ use yii\bootstrap5\Html;
                             <div class="row no-gutters">
                                 <div class="col-lg-9 col-md-8">
                                     <div class="newsletter_field">
-                                        <input type="email" placeholder="Your mail" >
+                                        <input type="email" placeholder="<?= Yii::t('app', 'subscribe_placeholder')?>" >
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4">
                                     <div class="newsletter_btn">
-                                        <button class="boxed-btn4 " type="submit" >Subscribe</button>
+                                        <button class="boxed-btn4 " type="submit" ><?= Yii::t('app', 'subscribe_button')?></button>
                                     </div>
                                 </div>
                             </div>
@@ -191,8 +190,8 @@ use yii\bootstrap5\Html;
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section_title text-center mb_70">
-                    <h3>Popular Places</h3>
-                    <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
+                    <h3><?= Yii::t('app', 'popular_places')?></h3>
+                    <p><?= Yii::t('app', 'lets_go')?></p>
                 </div>
             </div>
         </div>
@@ -229,7 +228,7 @@ use yii\bootstrap5\Html;
         <div class="row">
             <div class="col-lg-12">
                 <div class="more_place_btn text-center">
-                    <a class="boxed-btn4" href="#">More Places</a>
+                    <a class="boxed-btn4" href="#"><?= Yii::t('app', 'more_places_button')?></a>
                 </div>
             </div>
         </div>
@@ -242,7 +241,7 @@ use yii\bootstrap5\Html;
         <div class="row">
             <div class="col-lg-12">
                 <div class="video_wrap text-center">
-                    <h3>Enjoy Video</h3>
+                    <h3><?= Yii::t('app', 'enjoy_video')?></h3>
                     <div class="video_icon">
                         <a class="popup-video video_play_button" href="https://www.youtube.com/watch?v=f59dDEk57i0">
                             <i class="fa fa-play"></i>
@@ -255,42 +254,6 @@ use yii\bootstrap5\Html;
 </div>
 
 <!---->
-<!--<div class="travel_variation_area">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-4 col-md-6">-->
-<!--                <div class="single_travel text-center">-->
-<!--                    <div class="icon">-->
-<!--                        <img src="./template/img/svg_icon/1.svg" alt="">-->
-<!--                    </div>-->
-<!--                    <h3>Comfortable Journey</h3>-->
-<!--                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-lg-4 col-md-6">-->
-<!--                <div class="single_travel text-center">-->
-<!--                    <div class="icon">-->
-<!--                        <img src="./template/img/svg_icon/2.svg" alt="">-->
-<!--                    </div>-->
-<!--                    <h3>Luxuries Hotel</h3>-->
-<!--                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-lg-4 col-md-6">-->
-<!--                <div class="single_travel text-center">-->
-<!--                    <div class="icon">-->
-<!--                        <img src="./template/img/svg_icon/3.svg" alt="">-->
-<!--                    </div>-->
-<!--                    <h3>Travel Guide</h3>-->
-<!--                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!---->
-<!---->
-<!--<!-- testimonial_area  -->-->
 <!--<div class="testimonial_area">-->
 <!--    <div class="container">-->
 <!--        <div class="row">-->
@@ -347,66 +310,98 @@ use yii\bootstrap5\Html;
 <!--    </div>-->
 <!--</div>-->
 <!---->
-
-<div class="recent_trip_area">
+<div class="travel_variation_area">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="section_title text-center mb_70">
-                    <h3>Recent Trips</h3>
-                </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <div class="single_trip">
-                    <div class="thumb">
-                        <img src="./template/img/trip/1.png" alt="">
+                <div class="single_travel text-center">
+                    <div class="icon">
+                        <img src="./template/img/svg_icon/1.svg" alt="">
                     </div>
-                    <div class="info">
-                        <div class="date">
-                            <span>Oct 12, 2019</span>
-                        </div>
-                        <a href="#">
-                            <h3>Journeys Are Best Measured In
-                                New Friends</h3>
-                        </a>
-                    </div>
+                    <h3>Comfortable Journey</h3>
+                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="single_trip">
-                    <div class="thumb">
-                        <img src="./template/img/trip/2.png" alt="">
+                <div class="single_travel text-center">
+                    <div class="icon">
+                        <img src="./template/img/svg_icon/2.svg" alt="">
                     </div>
-                    <div class="info">
-                        <div class="date">
-                            <span>Oct 12, 2019</span>
-                        </div>
-                        <a href="#">
-                            <h3>Journeys Are Best Measured In
-                                New Friends</h3>
-                        </a>
-                    </div>
+                    <h3>Luxuries Hotel</h3>
+                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
-                <div class="single_trip">
-                    <div class="thumb">
-                        <img src="./template/img/trip/3.png" alt="">
+                <div class="single_travel text-center">
+                    <div class="icon">
+                        <img src="./template/img/svg_icon/3.svg" alt="">
                     </div>
-                    <div class="info">
-                        <div class="date">
-                            <span>Oct 12, 2019</span>
-                        </div>
-                        <a href="#">
-                            <h3>Journeys Are Best Measured In
-                                New Friends</h3>
-                        </a>
-                    </div>
+                    <h3>Travel Guide</h3>
+                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!--<div class="recent_trip_area">-->
+<!--    <div class="container">-->
+<!--        <div class="row justify-content-center">-->
+<!--            <div class="col-lg-6">-->
+<!--                <div class="section_title text-center mb_70">-->
+<!--                    <h3>Recent Trips</h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-4 col-md-6">-->
+<!--                <div class="single_trip">-->
+<!--                    <div class="thumb">-->
+<!--                        <img src="./template/img/trip/1.png" alt="">-->
+<!--                    </div>-->
+<!--                    <div class="info">-->
+<!--                        <div class="date">-->
+<!--                            <span>Oct 12, 2019</span>-->
+<!--                        </div>-->
+<!--                        <a href="#">-->
+<!--                            <h3>Journeys Are Best Measured In-->
+<!--                                New Friends</h3>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-md-6">-->
+<!--                <div class="single_trip">-->
+<!--                    <div class="thumb">-->
+<!--                        <img src="./template/img/trip/2.png" alt="">-->
+<!--                    </div>-->
+<!--                    <div class="info">-->
+<!--                        <div class="date">-->
+<!--                            <span>Oct 12, 2019</span>-->
+<!--                        </div>-->
+<!--                        <a href="#">-->
+<!--                            <h3>Journeys Are Best Measured In-->
+<!--                                New Friends</h3>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-md-6">-->
+<!--                <div class="single_trip">-->
+<!--                    <div class="thumb">-->
+<!--                        <img src="./template/img/trip/3.png" alt="">-->
+<!--                    </div>-->
+<!--                    <div class="info">-->
+<!--                        <div class="date">-->
+<!--                            <span>Oct 12, 2019</span>-->
+<!--                        </div>-->
+<!--                        <a href="#">-->
+<!--                            <h3>Journeys Are Best Measured In-->
+<!--                                New Friends</h3>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
