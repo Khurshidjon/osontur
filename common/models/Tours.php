@@ -97,4 +97,9 @@ class Tours extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Destinations::class, ['id' => 'destination_id']);
     }
+    public function translate($model)
+    {
+        $lang = Yii::$app->language;
+        return $this[$model.'_'.$lang];
+    }
 }

@@ -9,6 +9,8 @@ $this->title = 'Osontur | Bosh sahifa';
 use yii\helpers\Url;
 use yii\bootstrap5\Html;
 
+//$lang = Yii::$app->language;
+//echo Url::to(['/module/controller/action', 'lang' => $lang])
 ?>
 <style>
     .modal.explore_form .modal-dialog {
@@ -252,100 +254,99 @@ use yii\bootstrap5\Html;
     </div>
 </div>
 
-
-<div class="travel_variation_area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="single_travel text-center">
-                    <div class="icon">
-                        <img src="./template/img/svg_icon/1.svg" alt="">
-                    </div>
-                    <h3>Comfortable Journey</h3>
-                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_travel text-center">
-                    <div class="icon">
-                        <img src="./template/img/svg_icon/2.svg" alt="">
-                    </div>
-                    <h3>Luxuries Hotel</h3>
-                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_travel text-center">
-                    <div class="icon">
-                        <img src="./template/img/svg_icon/3.svg" alt="">
-                    </div>
-                    <h3>Travel Guide</h3>
-                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- testimonial_area  -->
-<div class="testimonial_area">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="testmonial_active owl-carousel">
-                    <div class="single_carousel">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="single_testmonial text-center">
-                                    <div class="author_thumb">
-                                        <img src="./template/img/testmonial/author.png" alt="">
-                                    </div>
-                                    <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                                    <div class="testmonial_author">
-                                        <h3>- Micky Mouse</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_carousel">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="single_testmonial text-center">
-                                    <div class="author_thumb">
-                                        <img src="./template/img/testmonial/author.png" alt="">
-                                    </div>
-                                    <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                                    <div class="testmonial_author">
-                                        <h3>- Tom Mouse</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_carousel">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="single_testmonial text-center">
-                                    <div class="author_thumb">
-                                        <img src="./template/img/testmonial/author.png" alt="">
-                                    </div>
-                                    <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                                    <div class="testmonial_author">
-                                        <h3>- Jerry Mouse</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /testimonial_area  -->
-
+<!---->
+<!--<div class="travel_variation_area">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-4 col-md-6">-->
+<!--                <div class="single_travel text-center">-->
+<!--                    <div class="icon">-->
+<!--                        <img src="./template/img/svg_icon/1.svg" alt="">-->
+<!--                    </div>-->
+<!--                    <h3>Comfortable Journey</h3>-->
+<!--                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-md-6">-->
+<!--                <div class="single_travel text-center">-->
+<!--                    <div class="icon">-->
+<!--                        <img src="./template/img/svg_icon/2.svg" alt="">-->
+<!--                    </div>-->
+<!--                    <h3>Luxuries Hotel</h3>-->
+<!--                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-md-6">-->
+<!--                <div class="single_travel text-center">-->
+<!--                    <div class="icon">-->
+<!--                        <img src="./template/img/svg_icon/3.svg" alt="">-->
+<!--                    </div>-->
+<!--                    <h3>Travel Guide</h3>-->
+<!--                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!---->
+<!---->
+<!--<!-- testimonial_area  -->-->
+<!--<div class="testimonial_area">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-xl-12">-->
+<!--                <div class="testmonial_active owl-carousel">-->
+<!--                    <div class="single_carousel">-->
+<!--                        <div class="row justify-content-center">-->
+<!--                            <div class="col-lg-8">-->
+<!--                                <div class="single_testmonial text-center">-->
+<!--                                    <div class="author_thumb">-->
+<!--                                        <img src="./template/img/testmonial/author.png" alt="">-->
+<!--                                    </div>-->
+<!--                                    <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>-->
+<!--                                    <div class="testmonial_author">-->
+<!--                                        <h3>- Micky Mouse</h3>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="single_carousel">-->
+<!--                        <div class="row justify-content-center">-->
+<!--                            <div class="col-lg-8">-->
+<!--                                <div class="single_testmonial text-center">-->
+<!--                                    <div class="author_thumb">-->
+<!--                                        <img src="./template/img/testmonial/author.png" alt="">-->
+<!--                                    </div>-->
+<!--                                    <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>-->
+<!--                                    <div class="testmonial_author">-->
+<!--                                        <h3>- Tom Mouse</h3>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="single_carousel">-->
+<!--                        <div class="row justify-content-center">-->
+<!--                            <div class="col-lg-8">-->
+<!--                                <div class="single_testmonial text-center">-->
+<!--                                    <div class="author_thumb">-->
+<!--                                        <img src="./template/img/testmonial/author.png" alt="">-->
+<!--                                    </div>-->
+<!--                                    <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>-->
+<!--                                    <div class="testmonial_author">-->
+<!--                                        <h3>- Jerry Mouse</h3>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!---->
 
 <div class="recent_trip_area">
     <div class="container">

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9520ea0c5ba8c241e3022048aef3a67c",
+    "content-hash": "c9204dc3d6bd1a8f854e83e3f7e4334b",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -847,6 +847,52 @@
                 "source": "https://github.com/php-fig/log/tree/1.1.4"
             },
             "time": "2021-05-03T11:20:27+00:00"
+        },
+        {
+            "name": "skeeks/yii2-multi-language",
+            "version": "1.0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skeeks-semenov/yii2-multi-language.git",
+                "reference": "1cde9f491191e82562c09434e152045c80910c50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skeeks-semenov/yii2-multi-language/zipball/1cde9f491191e82562c09434e152045c80910c50",
+                "reference": "1cde9f491191e82562c09434e152045c80910c50",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "^2.0.17 || dev-master"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "skeeks\\yii2\\multiLanguage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Semenov Alexander",
+                    "email": "semenov@skeeks.com"
+                }
+            ],
+            "description": "Component for multilingual site",
+            "homepage": "https://cms.skeeks.com",
+            "keywords": [
+                "links",
+                "text"
+            ],
+            "support": {
+                "authors": "https://skeeks.com",
+                "issues": "https://github.com/skeeks-semenov/yii2-multi-language/issues",
+                "source": "https://github.com/skeeks-semenov/yii2-multi-language/tree/master"
+            },
+            "time": "2019-08-15T17:53:32+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

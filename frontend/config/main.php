@@ -9,7 +9,7 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['multiLanguage'],
     'controllerNamespace' => 'frontend\controllers',
     'layout' => 'app',
     'modules' => [
@@ -17,10 +17,8 @@ return [
             'class' => 'frontend\modules\admin\Module',
         ],
     ],
+    'language' => 'uz',
     'components' => [
-        'request' => [
-            'csrfParam' => '_csrf-frontend',
-        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
@@ -42,16 +40,40 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'urlManager' => [
+        "request" => [
+            "class" => \skeeks\yii2\multiLanguage\MultiLangRequest::class
+        ],
+
+        "urlManager" => [
+            "class" => \skeeks\yii2\multiLanguage\MultiLangUrlManager::class,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '' => 'site/index',
-                'about' => 'site/about',
-                'tours' => 'site/tours',
-                'posts' => 'site/blog',
+                '<language:\w+>/'=>'site/index',
+                '<language:\w+>/about' => 'site/about',
+                '<language:\w+>/tours-list' => 'site/tours-list',
+                '<language:\w+>/posts' => 'site/blog',
+
+                '<language:\w+>/<controller>/<action>/<id:\d+>/<title>' => '<controller>/<action>',
+
+                '<language:\w+>/<controller>/<id:\d+>/<title>' => '<controller>/index',
+
+                '<language:\w+>/<controller>/<action>/<id:\d+>' => '<controller>/<action>',
+
+                '<language:\w+>/<controller>/<action>' => '<controller>/<action>',
+
+                '<language:\w+>/<controller>' => '<controller>',
+
+
             ],
         ],
+
+        "multiLanguage" => [
+            "class" => \skeeks\yii2\multiLanguage\MultiLangComponent::class,
+            'langs' => ['uz', 'ru', 'en'],
+            'default_lang' => 'uz',         //Language to which no language settings are added.
+            'lang_param_name' => 'lang',
+        ]
 
     ],
     'params' => $params,

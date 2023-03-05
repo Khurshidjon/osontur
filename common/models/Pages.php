@@ -66,4 +66,9 @@ class Pages extends \yii\db\ActiveRecord
             'updated_at' => 'Updated At',
         ];
     }
+    public function translate($model)
+    {
+        $lang = Yii::$app->language;
+        return $this[$model.'_'.$lang];
+    }
 }

@@ -5,6 +5,9 @@
 
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
+use yii\helpers\Url;
+use common\models\Menus;
+
 AppAsset::register($this);
 
 ?>
@@ -27,6 +30,30 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <style>
+        .custom-list{
+            /*width: 5em;*/
+            /*padding-left: 20px;*/
+            text-align: center;
+        }
+        .custom-list-item {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: #c60c90;
+        }
+        .custom-list-item > a {
+            width: 100%;
+            display: block;
+            padding: 10px;
+            /*padding: 100px*/
+        }
+        .custom-list-item > a:hover {
+            background-color: rgba(0,0,0, 0.2);
+        }
+        .custom-list-item.active a {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -52,25 +79,34 @@ AppAsset::register($this);
                         <div class="col-xl-6 col-lg-6">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
+                                    <?php
+                                        $lang = '/'.  Yii::$app->language != 'uz' ?  Yii::$app->language : '';
+
+                                        $currentUrl = Yii::$app->request->url != '/site/index' ? Yii::$app->request->url : '' ;
+                                    ?>
                                     <ul id="navigation">
-                                        <?php foreach (\common\models\Menus::find()->all() as $value): ?>
-                                            <li><a class="active" href="<?= $value->link_path ?>"><?= $value->title_uz?></a></li>
+                                        <?php foreach (Menus::find()->all() as $value): ?>
+                                            <li><a class="active" href="<?= Url::to([$value->link_path, 'lang' => $lang])   ?>"><?= $value->translate('title') ?></a></li>
                                         <?php endforeach;?>
-<!--                                        <li><a href="--><?//= \yii\helpers\Url::toRoute(['about'])?><!--">About</a></li>-->
-<!--                                        <li><a class="" href="--><?//= \yii\helpers\Url::toRoute(['destinations'])?><!--">Destination</a></li/li>-->
-<!--                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>-->
-<!--                                            <ul class="submenu">-->
-<!--                                                <li><a href="--><?//= \yii\helpers\Url::toRoute(['blog'])?><!--">blog</a></li>-->
-<!--                                                <li><a href="--><?//= \yii\helpers\Url::toRoute(['single-blog'])?><!--">single-blog</a></li>-->
-<!--                                            </ul>-->
-<!--                                        </li>-->
-<!--                                        <li><a href="/contacts">Contact</a></li>-->
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 d-none d-lg-block">
                             <div class="social_wrap d-flex align-items-center justify-content-end">
+                                <div class="btn-group dropleft mr-4">
+                                    <button type="button" class="boxed-btn4 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <?= Yii::$app->language ?>
+<!--                                        --><?//= Yii::$app->request->url ?>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                       <ul class="custom-list">
+                                           <li class="custom-list-item <?= Yii::$app->language == 'uz' ? 'active' : ''?>"><a href="<?= Url::to([$currentUrl, 'lang' => 'uz'])?>">Uzb</a></li>
+                                           <li class="custom-list-item <?= Yii::$app->language == 'ru' ? 'active' : ''?>"><a href="<?= Url::to([$currentUrl, 'lang' => 'ru'])?>">Рус</a></li>
+                                           <li class="custom-list-item <?= Yii::$app->language == 'en' ? 'active' : ''?>"><a href="<?= Url::to([$currentUrl, 'lang' => 'en'])?>">Eng</a></li>
+                                       </ul>
+                                    </div>
+                                </div>
                                 <div class="number">
                                     <p> <i class="fa fa-phone"></i> 998 (90) 399 11 33</p>
                                 </div>
@@ -147,7 +183,19 @@ AppAsset::register($this);
                                 </li>
                             </ul>
                         </div>
-
+                       <div class="d-block d-lg-none d-xl-none">
+                           <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <?= Yii::$app->language ?>
+                               <!--                                        --><?//= Yii::$app->request->url ?>
+                           </button>
+                           <div class="dropdown-menu">
+                               <ul class="custom-list">
+                                   <li class="custom-list-item <?= Yii::$app->language == 'uz' ? 'active' : ''?>"><a href="<?= Url::to([Yii::$app->request->url, 'lang' => 'uz'])?>">Uzb</a></li>
+                                   <li class="custom-list-item <?= Yii::$app->language == 'ru' ? 'active' : ''?>"><a href="<?= Url::to([Yii::$app->request->url, 'lang' => 'ru'])?>">Рус</a></li>
+                                   <li class="custom-list-item <?= Yii::$app->language == 'en' ? 'active' : ''?>"><a href="<?= Url::to([Yii::$app->request->url, 'lang' => 'en'])?>">Eng</a></li>
+                               </ul>
+                           </div>
+                       </div>
                     </div>
                 </div>
                 <div class="col-xl-8 col-md-6 col-lg-8">

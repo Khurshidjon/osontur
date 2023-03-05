@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6826ea-8346-48c3-bc01-4163348a681c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/osontur.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/osontur.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Destinations.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Destinations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Menus.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Menus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Pages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Tags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Tours.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Tours.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/menu/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/menu/_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/layouts/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +146,7 @@
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base" />
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-fileinput" />
       <path value="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor" />
+      <path value="$PROJECT_DIR$/vendor/skeeks/yii2-multi-language" />
     </include_path>
   </component>
   <component name="ProjectId" id="2MJAd5D1pDvMmHwYtJi6WqBsdaS" />
@@ -144,18 +159,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/modules/admin/controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/common" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\shaxsiy\osontur\common" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\modules\admin\controllers" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\views\layouts" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\modules\admin\views\default" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\web" />
-      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\views" />
@@ -180,12 +195,22 @@
       <option name="presentableId" value="Default" />
       <updated>1677475395758</updated>
       <workItem from="1677475397179" duration="20080000" />
-      <workItem from="1677840747215" duration="35173000" />
+      <workItem from="1677840747215" duration="42923000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

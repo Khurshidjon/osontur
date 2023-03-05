@@ -89,6 +89,11 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionReplace($lang = null)
+    {
+        die();
+    }
+
 
     public function actionAbout()
     {

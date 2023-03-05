@@ -28,8 +28,6 @@ use common\models\Menus;
 
     <?= $form->field($model, 'is_wrapper')->textInput() ?>
 
-<!--    --><?//= $form->field($model, 'status')->textInput() ?>
-
     <?= $form->field($model, 'order')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
