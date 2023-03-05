@@ -43,8 +43,8 @@ class TelegramUser extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['step', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['first_name', 'username', 'telegram_id', 'user_id'], 'string', 'max' => 255],
+            [['role', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['username', 'telegram_id', 'user_id', 'nickname', 'fio'], 'string', 'max' => 255],
         ];
     }
 

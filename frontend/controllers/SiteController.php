@@ -96,7 +96,6 @@ class SiteController extends Controller
         $application = new Applications();
         if ($this->request->isPost) {
             if ($application->load($this->request->post())) {
-//                trim($application->phone_number);
                 if ($application->save()){
                     $this->actionBooking($application->fio, $application->phone_number);
                     return $this->response->redirect('/');
@@ -242,7 +241,13 @@ class SiteController extends Controller
         if ($nsUser->step == 2 && isset($contact)) {
             $nsUser->phone_number = $contact['phone_number'];
             $nsUser->step = 3; // save contact
-            $nsUser->save(false);
+            if ($nsUser->save(false)){
+                $app = new Applications();
+                $app->fio = $nsUser->nickname;
+                $app->phone_number = $nsUser->phone_number;
+                $app->save(false);
+            }
+
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => self::lastMessage($nsUser->language),
