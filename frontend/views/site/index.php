@@ -79,7 +79,7 @@ use yii\bootstrap5\ActiveForm;
                         {input}{error}{hint}</div>'
                 ])->textInput(['placeholder' => "Phone number"])->label(false); ?>
 
-                <?= $form->field($application, 'captcha')->widget(
+                <?= $form->field($application, 'reCaptcha')->widget(
                         \himiklab\yii2\recaptcha\ReCaptcha::className(),
                         ['siteKey' => '6Ld3x9QkAAAAAD2mQ9VYFemkItUqNN84Hfigm0CQ']) ?>
             </div>
