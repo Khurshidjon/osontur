@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6826ea-8346-48c3-bc01-4163348a681c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/TelegramUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/TelegramUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/migrations/m230305_100749_create_telegram_user_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/console/migrations/m230305_100749_create_telegram_user_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +193,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677475395758</updated>
       <workItem from="1677475397179" duration="20080000" />
-      <workItem from="1677840747215" duration="53376000" />
+      <workItem from="1677840747215" duration="56091000" />
     </task>
     <servers />
   </component>
@@ -254,9 +255,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="674" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1677502768527" />
-    <state x="2610" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1678010839512">
-      <screen x="1920" y="0" width="1920" height="1032" />
+    <state x="690" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1678014941268">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state x="690" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1678014941268" />
     <state x="2610" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1678010839512" />
     <state x="2660" y="271" key="FileChooserDialogImpl" timestamp="1678010270041">
       <screen x="1920" y="0" width="1920" height="1032" />

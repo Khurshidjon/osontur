@@ -9,8 +9,10 @@ use yii\behaviors\TimestampBehavior;
  * This is the model class for table "telegram_user".
  *
  * @property int $id
- * @property string|null $first_name
+ * @property string|null $nickname
+ * @property string|null $language
  * @property string|null $username
+ * @property string|null $phone_number
  * @property string|null $telegram_id
  * @property string|null $user_id
  * @property int|null $step

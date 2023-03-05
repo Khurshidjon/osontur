@@ -27,6 +27,14 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
+
+    public function beforeAction($action) {
+        if($action->id == 'bot') {
+            Yii::$app->request->enableCsrfValidation = false;
+        }
+        return parent::beforeAction($action);
+    }
+
     public function behaviors()
     {
         return [
@@ -150,39 +158,83 @@ class SiteController extends Controller
     public function actionBot()
     {
         $telegram = Yii::$app->telegram;
+        $message = $telegram->input->message;
         $text = $telegram->input->message->text;
         $username = $telegram->input->message->chat->username;
-        $first_name = $telegram->input->message->chat->first_name;
         $telegram_id = $telegram->input->message->chat->id;
-        $user = TelegramUser::find()->where(['telegram_id' => $telegram_id])->one();
-        $message_id = $telegram->input->message->message_id;
-//        $telegram_response = Yii::$app->telegram_response;
+        $full_name = $telegram->input->message->chat->first_name . ' ' . $telegram->input->message->chat->last_name;
+//        $message_id = $telegram->input->message->message_id;
+        $nsUser = TelegramUser::findOne(['telegram_id' => $telegram_id]);
 
-        $msg = $telegram->update->callback_query;
-        if (!$user) {
-            $model = new TelegramUser();
-            $model->telegram_id = $telegram_id;
-            $model->username = $username;
-            $model->first_name = $first_name;
-            $model->save(false);
-        }
-        if ($text == "/start") {
+        $change_btn = json_encode([
+            'keyboard' => [
+                [
+                    ['text' => "🇺🇿 O'zbek"],
+                ],
+                [
+                    ['text' => "🇷🇺 Русский"],
+                ]
+            ], 'resize_keyboard' => true
+        ]);
+
+        if (!$nsUser) {
+            $newUser = new TelegramUser();
+            $newUser->telegram_id = $telegram_id;
+            $newUser->username = $username;
+            $newUser->nickname = $full_name;
+            $newUser->save(false);
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
-                'text' => "Assalomu alaykum ". $first_name,
+                'text' => "🇺🇿 Tilni tanlang <br> 🇷🇺 Выберите язык",
+                'reply_markup' => $change_btn,
+                'parse_mode' => 'HTML'
             ]);
+            die;
         }
-//        $query_id = $telegram->input->callback_query->id;
-//        $telegram->sendMessage([
-//            'chat_id' => 631141690,
-//            'text' => $query_id,
-//        ]);
-//        Yii::$app->telegram->answerCallbackQuery([
-//            'callback_query_id' => $query_id, //require
-//            'text' => 'text', //Optional
-//            'show_alert' => 'my alert',  //Optional
-////           'cache_time' => 123231,  //Optional
-//        ]);
+        if ($text == "/start") {
+            $nsUser->save(false);
+            $telegram->sendMessage([
+                'chat_id' => $telegram_id,
+                'text' => $full_name . " kerakli bo'limni tanlang",
+                'reply_markup' => $change_btn
+            ]);
+            die;
+        }
+        if ($text == "🇺🇿 O'zbek") {
+            $nsUser->language = 'uz';
+            $nsUser->step = 2;
+            $nsUser->save(false);
+            $telegram->sendMessage([
+                'chat_id' => $telegram_id,
+                'text' => "Siz bilan bog'lanish uchun telefon raqamingizni operator kodi bilan yuboring",
+                'reply_markup' => self::sharePhoneKeyboard('uz')
+            ]);
+            die;
+        }
+        if ($text == "🇷🇺 Русский") {
+            $nsUser->language = 'ru';
+            $nsUser->step = 2;
+            $nsUser->save(false);
+            $telegram->sendMessage([
+                'chat_id' => $telegram_id,
+                'text' => "Отправьте номер телефона с кодом оператора, чтобы связаться с вами",
+                'reply_markup' => self::sharePhoneKeyboard('ru')
+            ]);
+            die;
+        }
+    }
+
+    public static function sharePhoneKeyboard($lang)
+    {
+        $text_keybord_share_phone = $lang == 'uz' ? "📞 Telefon raqamni yuborish" : "📞 Отправить номер телефона";
+        $keyboard_basic_undo = json_encode([
+            'keyboard' => [
+                [
+                    ['text' => $text_keybord_share_phone]
+                ]
+            ], 'resize_keyboard' => true
+        ]);
+        return $keyboard_basic_undo;
     }
 
 
