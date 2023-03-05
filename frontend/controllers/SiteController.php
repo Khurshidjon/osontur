@@ -97,6 +97,7 @@ class SiteController extends Controller
         if ($this->request->isPost) {
             if ($application->load($this->request->post())) {
                 $application->save();
+                $this->actionBooking($application->fio, $application->phone_number);
                 return $this->response->redirect('/');
             }
         }
@@ -110,10 +111,6 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionRefreshCaptcha()
-    {
-        return Captcha::widget();
-    }
 
     public function actionAbout()
     {
@@ -154,21 +151,25 @@ class SiteController extends Controller
         return $this->render('pages/single-blog');
     }
 
-    public function actionBooking()
+    public function actionBooking($fio, $phone)
     {
-        $chat_id = '631141690';
+        $admins = TelegramUser::find()->where(['role' => 2])->all();
         $text = '';
         $text .= "<b>Yangi buyurtma</b>\n\n";
-        $text .= "<b>FIO: </b> Ergashev Xurshid Ergash o'g'li \n";
-        $text .= "<b>Tel: </b> +998990005795 \n";
+        $text .= "<b>FIO: </b> $fio\n";
+        $text .= "<b>Tel: </b> +998$phone \n";
         $text .= "\n\n";
-        $text .= "<b>Agar yuborilgan raqam telegramda mavjuda bo'lsa unga yozish: </b> https://t.me/+998990005795";
+        $text .= "<b>Agar yuborilgan raqam telegramda mavjuda bo'lsa unga yozish: </b> https://t.me/+998$phone";
 
-        Yii::$app->telegram->sendMessage([
-            'chat_id' => $chat_id,
-            'text' => $text,
-            'parse_mode' => 'HTML'
-        ]);
+        foreach ($admins as $admin){
+            $chat_id = $admin->telegram_id;
+
+            Yii::$app->telegram->sendMessage([
+                'chat_id' => $chat_id,
+                'text' => $text,
+                'parse_mode' => 'HTML'
+            ]);
+        }
     }
 
     public function actionBot()
