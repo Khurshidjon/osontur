@@ -195,7 +195,7 @@ class SiteController extends Controller
             $nsUser->save(false);
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
-                'text' => $full_name . " kerakli bo'limni tanlang",
+                'text' => "🇺🇿 Tilni tanlang <br> 🇷🇺 Выберите язык",
                 'reply_markup' => $change_btn
             ]);
             die;
