@@ -185,9 +185,8 @@ class SiteController extends Controller
             $newUser->save(false);
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
-                'text' => "🇺🇿 Tilni tanlang <br> 🇷🇺 Выберите язык",
+                'text' => "🇺🇿 Tilni tanlang \n\n 🇷🇺 Выберите язык",
                 'reply_markup' => $change_btn,
-                'parse_mode' => 'HTML'
             ]);
             die;
         }
@@ -195,9 +194,8 @@ class SiteController extends Controller
             $nsUser->save(false);
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
-                'text' => "🇺🇿 Tilni tanlang <br> 🇷🇺 Выберите язык",
-                'reply_markup' => $change_btn,
-                'parse_mode' => 'HTML'
+                'text' => "🇺🇿 Tilni tanlang \n\n 🇷🇺 Выберите язык",
+                'reply_markup' => $change_btn
             ]);
             die;
         }
@@ -208,19 +206,33 @@ class SiteController extends Controller
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => "Siz bilan bog'lanish uchun telefon raqamingizni operator kodi bilan yuboring",
-                'reply_markup' => self::sharePhoneKeyboard('uz')
+                'reply_markup' => self::sharePhoneKeyboard('uz'),
+                'request_contact' => true
             ]);
             die;
         }
         if ($text == "🇷🇺 Русский") {
             $nsUser->language = 'ru';
-            $nsUser->step = 2;
+            $nsUser->step = 3;
             $nsUser->save(false);
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => "Отправьте номер телефона с кодом оператора, чтобы связаться с вами",
-                'reply_markup' => self::sharePhoneKeyboard('ru')
+                'reply_markup' => self::sharePhoneKeyboard('ru'),
+                'request_contact' => true
             ]);
+            die;
+        }
+        if ($text == "📞 Telefon raqamni yuborish" || $text == "📞 Отправить номер телефона") {
+//            $nsUser->phone_number = $text;
+//            $nsUser->step = 3;
+//            $nsUser->save(false);
+//            $telegram->sendMessage([
+//                'chat_id' => $telegram_id,
+//                'text' => "Отправьте номер телефона с кодом оператора, чтобы связаться с вами",
+//                'reply_markup' => self::sharePhoneKeyboard('ru'),
+//                'request_contact' => true
+//            ]);
             die;
         }
     }

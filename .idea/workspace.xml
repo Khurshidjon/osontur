@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6826ea-8346-48c3-bc01-4163348a681c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +191,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677475395758</updated>
       <workItem from="1677475397179" duration="20080000" />
-      <workItem from="1677840747215" duration="56245000" />
+      <workItem from="1677840747215" duration="57858000" />
     </task>
     <servers />
   </component>
@@ -291,5 +292,9 @@
     </state>
     <state x="616" y="238" key="run.anything.popup/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1677585692877" />
     <state x="2536" y="238" width="672" height="677" key="run.anything.popup/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1677850862703" />
+    <state x="616" y="169" width="672" height="676" key="search.everywhere.popup" timestamp="1678018626334">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="616" y="169" width="672" height="676" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1678018626334" />
   </component>
 </project>
