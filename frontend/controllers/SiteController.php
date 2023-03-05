@@ -28,8 +28,9 @@ class SiteController extends Controller
      * {@inheritdoc}
      */
 
-    public function beforeAction($action) {
-        if($action->id == 'bot') {
+    public function beforeAction($action)
+    {
+        if ($action->id == 'bot') {
             Yii::$app->request->enableCsrfValidation = false;
         }
         return parent::beforeAction($action);
@@ -109,9 +110,9 @@ class SiteController extends Controller
     {
         $destination = Destinations::findOne($id);
         $model = Tours::find();
-        if ($id){
+        if ($id) {
             $tours = $model->where(['destination_id' => $id])->all();
-        }else{
+        } else {
             $tours = $model->all();
         }
         return $this->render('pages/destinations', [
@@ -158,12 +159,11 @@ class SiteController extends Controller
     public function actionBot()
     {
         $telegram = Yii::$app->telegram;
-        $message = $telegram->input->message;
         $text = $telegram->input->message->text;
         $username = $telegram->input->message->chat->username;
         $telegram_id = $telegram->input->message->chat->id;
+        $contact = $telegram->input->message->contact;
         $full_name = $telegram->input->message->chat->first_name . ' ' . $telegram->input->message->chat->last_name;
-//        $message_id = $telegram->input->message->message_id;
         $nsUser = TelegramUser::findOne(['telegram_id' => $telegram_id]);
 
         $change_btn = json_encode([
@@ -201,79 +201,60 @@ class SiteController extends Controller
         }
         if ($text == "🇺🇿 O'zbek") {
             $nsUser->language = 'uz';
-            $nsUser->step = 2;
+            $nsUser->step = 2; //save lang
             $nsUser->save(false);
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => "Siz bilan bog'lanish uchun telefon raqamingizni operator kodi bilan yuboring",
                 'reply_markup' => self::sharePhoneKeyboard('uz'),
-                'request_contact' => true
             ]);
             die;
         }
         if ($text == "🇷🇺 Русский") {
             $nsUser->language = 'ru';
-            $nsUser->step = 3;
+            $nsUser->step = 2; //save lang
             $nsUser->save(false);
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => "Отправьте номер телефона с кодом оператора, чтобы связаться с вами",
                 'reply_markup' => self::sharePhoneKeyboard('ru'),
-                'request_contact' => true
             ]);
             die;
         }
-        if ($text == "📞 Telefon raqamni yuborish" || $text == "📞 Отправить номер телефона") {
-//            $nsUser->phone_number = $text;
-//            $nsUser->step = 3;
-//            $nsUser->save(false);
-//            $telegram->sendMessage([
-//                'chat_id' => $telegram_id,
-//                'text' => "Отправьте номер телефона с кодом оператора, чтобы связаться с вами",
-//                'reply_markup' => self::sharePhoneKeyboard('ru'),
-//                'request_contact' => true
-//            ]);
+        if ($nsUser->step == 2 && isset($contact)) {
+            $nsUser->phone_number = $contact['phone_number'];
+            $nsUser->step = 3; // save contact
+            $nsUser->save(false);
+            $telegram->sendMessage([
+                'chat_id' => $telegram_id,
+                'text' => self::lastMessage($nsUser->language),
+            ]);
             die;
         }
+    }
+
+    public static function lastMessage($lang)
+    {
+        return $lang == 'uz' ? "Arizangiz qabul qilindi, tez orada operatorlarimiz siz bilan bog'lanadi\n\nQo'shimcha ma'lumotlar bilan https://osontur.uz sahifasi orqali tanishishingiz mumkin" : "Ваша заявка принята, наши операторы свяжутся с вами в ближайшее время\n\nДополнительную информацию вы можете найти на https://osontur.uz/ru";
     }
 
     public static function sharePhoneKeyboard($lang)
     {
         $text_keybord_share_phone = $lang == 'uz' ? "📞 Telefon raqamni yuborish" : "📞 Отправить номер телефона";
-        $keyboard_basic_undo = json_encode([
+        $keyboard_share = json_encode([
             'keyboard' => [
                 [
-                    ['text' => $text_keybord_share_phone]
+                    [
+                        'text' => $text_keybord_share_phone,
+                        'request_contact' => true
+                    ],
                 ]
-            ], 'resize_keyboard' => true
+            ],
+            'one_time_keyboard' => true,
+            'resize_keyboard' => true,
         ]);
-        return $keyboard_basic_undo;
+        return $keyboard_share;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /**
@@ -405,8 +386,8 @@ class SiteController extends Controller
      * Verify email address
      *
      * @param string $token
-     * @throws BadRequestHttpException
      * @return yii\web\Response
+     * @throws BadRequestHttpException
      */
     public function actionVerifyEmail($token)
     {
