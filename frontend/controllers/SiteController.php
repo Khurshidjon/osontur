@@ -101,9 +101,9 @@ class SiteController extends Controller
         $destination = Destinations::findOne($id);
         $model = Tours::find();
         if ($id){
-            $tours = Tours::find()->where(['destination_id' => $id])->all();
+            $tours = $model->where(['destination_id' => $id])->all();
         }else{
-            $tours = Tours::find()->all();
+            $tours = $model->all();
         }
         return $this->render('pages/destinations', [
             'tours' => $tours,
