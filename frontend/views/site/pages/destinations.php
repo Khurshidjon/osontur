@@ -72,8 +72,8 @@ use yii\helpers\Url;
                                 </div>
                                 <div class="place_info">
                                     <a href="<?= Url::toRoute(['single-destination', 'id' => $tour->id]) ?>">
-                                        <h3><?= $tour->title_uz ?></h3></a>
-                                    <p><?= $tour->destination ? $tour->destination->title_uz : '' ?></p>
+                                        <h3><?= $tour->translate('title') ?></h3></a>
+                                    <p><?= $tour->destination ? $tour->destination->translate('title') : '' ?></p>
                                     <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
                                      <i class="fa fa-star"></i>
