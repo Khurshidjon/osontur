@@ -196,7 +196,8 @@ class SiteController extends Controller
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => "🇺🇿 Tilni tanlang <br> 🇷🇺 Выберите язык",
-                'reply_markup' => $change_btn
+                'reply_markup' => $change_btn,
+                'parse_mode' => 'HTML'
             ]);
             die;
         }
