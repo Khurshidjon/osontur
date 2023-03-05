@@ -156,10 +156,10 @@ class SiteController extends Controller
         $admins = TelegramUser::find()->where(['role' => 2])->all();
         $text = '';
         $text .= "<b>Yangi buyurtma</b>\n\n";
-        $text .= "<b>FIO: </b> $fio\n";
-        $text .= "<b>Tel: </b> +998$phone \n";
+        $text .= "<b>FIO: </b>.$fio\n";
+        $text .= "<b>Tel: </b> +998.$phone \n";
         $text .= "\n\n";
-        $text .= "<b>Agar yuborilgan raqam telegramda mavjuda bo'lsa unga yozish: </b> https://t.me/+998$phone";
+        $text .= "<b>Agar yuborilgan raqam telegramda mavjuda bo'lsa unga yozish: </b> https://t.me/+998.$phone";
 
         foreach ($admins as $admin){
             $chat_id = $admin->telegram_id;
