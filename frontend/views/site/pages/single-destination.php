@@ -6,7 +6,7 @@ use yii\helpers\Url;
 
 <div class="destination_banner_wrap overlay" style="background-image: url('/toursFiles<?= $tour->wallpaper?>')">
     <div class="destination_text text-center">
-        <h3><?= $tour->title_uz ?></h3>
+        <h3><?= $tour->translate('title') ?></h3>
         <p>Pixel perfect design with awesome contents</p>
     </div>
 </div>
@@ -16,7 +16,7 @@ use yii\helpers\Url;
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-9">
                 <div class="destination_info">
-                    <?= $tour->content_uz ?>
+                    <?= $tour->translate('content') ?>
                 </div>
                 <div class="bordered_1px"></div>
                 <div class="contact_join">
