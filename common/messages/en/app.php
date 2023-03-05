@@ -17,4 +17,10 @@ return [
     'popular_places' => 'Popular places',
     'more_places_button' => 'More places',
     'enjoy_video' => 'Enjoy video',
+    'comfort_title' => 'Comfortable Journey',
+    'comfort_content' => 'We use the fastest and most convenient means of transport during your trip',
+    'lux_hotel_title' => 'Luxurious Hotel',
+    'lux_hotel_content' => 'Traveling in a good mood is important and it cannot be imagined without luxury hotels',
+    'travel_title' => 'Travel Guide',
+    'travel_content' => 'We provide all the guidance to make you feel like you\'re at home on a wonderful trip.',
 ];

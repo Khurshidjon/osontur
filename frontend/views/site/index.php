@@ -253,155 +253,36 @@ use yii\bootstrap5\Html;
     </div>
 </div>
 
-<!---->
-<!--<div class="testimonial_area">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-xl-12">-->
-<!--                <div class="testmonial_active owl-carousel">-->
-<!--                    <div class="single_carousel">-->
-<!--                        <div class="row justify-content-center">-->
-<!--                            <div class="col-lg-8">-->
-<!--                                <div class="single_testmonial text-center">-->
-<!--                                    <div class="author_thumb">-->
-<!--                                        <img src="./template/img/testmonial/author.png" alt="">-->
-<!--                                    </div>-->
-<!--                                    <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>-->
-<!--                                    <div class="testmonial_author">-->
-<!--                                        <h3>- Micky Mouse</h3>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="single_carousel">-->
-<!--                        <div class="row justify-content-center">-->
-<!--                            <div class="col-lg-8">-->
-<!--                                <div class="single_testmonial text-center">-->
-<!--                                    <div class="author_thumb">-->
-<!--                                        <img src="./template/img/testmonial/author.png" alt="">-->
-<!--                                    </div>-->
-<!--                                    <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>-->
-<!--                                    <div class="testmonial_author">-->
-<!--                                        <h3>- Tom Mouse</h3>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="single_carousel">-->
-<!--                        <div class="row justify-content-center">-->
-<!--                            <div class="col-lg-8">-->
-<!--                                <div class="single_testmonial text-center">-->
-<!--                                    <div class="author_thumb">-->
-<!--                                        <img src="./template/img/testmonial/author.png" alt="">-->
-<!--                                    </div>-->
-<!--                                    <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>-->
-<!--                                    <div class="testmonial_author">-->
-<!--                                        <h3>- Jerry Mouse</h3>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!---->
 <div class="travel_variation_area">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="single_travel text-center">
                     <div class="icon">
-                        <img src="./template/img/svg_icon/1.svg" alt="">
+                        <?= Html::img('/template/img/svg_icon/1.svg')?>
                     </div>
-                    <h3>Comfortable Journey</h3>
-                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>
+                    <h3><?= Yii::t('app', 'comfort_title')?></h3>
+                    <p><?= Yii::t('app', 'comfort_content')?></p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single_travel text-center">
                     <div class="icon">
-                        <img src="./template/img/svg_icon/2.svg" alt="">
+                        <?= Html::img('/template/img/svg_icon/2.svg')?>
                     </div>
-                    <h3>Luxuries Hotel</h3>
-                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>
+                    <h3><?= Yii::t('app', 'lux_hotel_title')?></h3>
+                    <p><?= Yii::t('app', 'lux_hotel_content')?></p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single_travel text-center">
                     <div class="icon">
-                        <img src="./template/img/svg_icon/3.svg" alt="">
+                        <?= Html::img('/template/img/svg_icon/3.svg')?>
                     </div>
-                    <h3>Travel Guide</h3>
-                    <p>A wonderful serenity has taken to the possession of my entire soul.</p>
+                    <h3><?= Yii::t('app', 'travel_title')?></h3>
+                    <p><?= Yii::t('app', 'travel_content')?></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--<div class="recent_trip_area">-->
-<!--    <div class="container">-->
-<!--        <div class="row justify-content-center">-->
-<!--            <div class="col-lg-6">-->
-<!--                <div class="section_title text-center mb_70">-->
-<!--                    <h3>Recent Trips</h3>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-4 col-md-6">-->
-<!--                <div class="single_trip">-->
-<!--                    <div class="thumb">-->
-<!--                        <img src="./template/img/trip/1.png" alt="">-->
-<!--                    </div>-->
-<!--                    <div class="info">-->
-<!--                        <div class="date">-->
-<!--                            <span>Oct 12, 2019</span>-->
-<!--                        </div>-->
-<!--                        <a href="#">-->
-<!--                            <h3>Journeys Are Best Measured In-->
-<!--                                New Friends</h3>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-lg-4 col-md-6">-->
-<!--                <div class="single_trip">-->
-<!--                    <div class="thumb">-->
-<!--                        <img src="./template/img/trip/2.png" alt="">-->
-<!--                    </div>-->
-<!--                    <div class="info">-->
-<!--                        <div class="date">-->
-<!--                            <span>Oct 12, 2019</span>-->
-<!--                        </div>-->
-<!--                        <a href="#">-->
-<!--                            <h3>Journeys Are Best Measured In-->
-<!--                                New Friends</h3>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-lg-4 col-md-6">-->
-<!--                <div class="single_trip">-->
-<!--                    <div class="thumb">-->
-<!--                        <img src="./template/img/trip/3.png" alt="">-->
-<!--                    </div>-->
-<!--                    <div class="info">-->
-<!--                        <div class="date">-->
-<!--                            <span>Oct 12, 2019</span>-->
-<!--                        </div>-->
-<!--                        <a href="#">-->
-<!--                            <h3>Journeys Are Best Measured In-->
-<!--                                New Friends</h3>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
