@@ -49,21 +49,21 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '<language:\w+>/'=>'site/index',
-                '<language:\w+>/about' => 'site/about',
-                '<language:\w+>/tours-list' => 'site/tours-list',
-                '<language:\w+>/posts' => 'site/blog',
-
-                '<language:\w+>/<controller>/<action>/<id:\d+>/<title>' => '<controller>/<action>',
-
-                '<language:\w+>/<controller>/<id:\d+>/<title>' => '<controller>/index',
-
-                '<language:\w+>/<controller>/<action>/<id:\d+>' => '<controller>/<action>',
-
-                '<language:\w+>/<controller>/<action>' => '<controller>/<action>',
-
-                '<language:\w+>/<controller>' => '<controller>',
-
+                'about' => 'site/about',
+                'tours-list' => 'site/tours-list',
+                'posts' => 'site/blog',
+//
+//                '<language:\w+>/<controller>/<action>/<id:\d+>/<title>' => '<controller>/<action>',
+//
+//                '<language:\w+>/<controller>/<id:\d+>/<title>' => '<controller>/index',
+//
+//                '<language:\w+>/<controller>/<action>/<id:\d+>' => '<controller>/<action>',
+//
+//                '<language:\w+>/<controller>/<action>' => '<controller>/<action>',
+//
+//                '<language:\w+>/<controller>' => '<controller>',
+//
+//                '<language:\w+>/index'=>'site/index',
 
             ],
         ],
