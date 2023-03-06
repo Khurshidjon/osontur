@@ -13,40 +13,40 @@ use yii\grid\GridView;
 $this->title = 'Pages';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="pages-index">
+<div class="pages-index card">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="card-header">
+        <h1><?= Html::encode($this->title); ?></h1>
+        <p>
+            <?= Html::a('Create Pages', ['create'], ['class' => 'btn btn-success']) ?>
+        </p>
+    </div>
 
-    <p>
-        <?= Html::a('Create Pages', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <div class="card-body">
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'title_uz',
-            'title_ru',
-            'title_en',
-            'content_uz:ntext',
-            //'content_ru:ntext',
-            //'content_en:ntext',
-            //'status',
-            //'created_at',
-            //'updated_at',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Pages $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                'id',
+                'title_uz',
+                'title_ru',
+                'title_en',
+                'content_uz:ntext',
+                //'content_ru:ntext',
+                //'content_en:ntext',
+                //'status',
+                //'created_at',
+                //'updated_at',
+                [
+                    'class' => ActionColumn::className(),
+                    'urlCreator' => function ($action, Pages $model, $key, $index, $column) {
+                        return Url::toRoute([$action, 'id' => $model->id]);
+                    }
+                ],
             ],
-        ],
-    ]); ?>
-
+        ]); ?>
+    </div>
 
 </div>

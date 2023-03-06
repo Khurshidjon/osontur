@@ -44,7 +44,7 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                     <div class="row align-items-center">
                         <div class="col-xl-12 col-md-12">
                             <div class="slider_text text-center">
-                                <h3><?= $wallpaper->title_uz ?></h3>
+                                <h3><?= $wallpaper->translate('title') ?></h3>
                                 <p><?= Yii::t('app', 'travel_with_us') ?></p>
                                 <button type="button" class="btn btn-primary boxed-btn3" data-toggle="modal"
                                         data-target="#staticBackdrop"><?= Yii::t('app', 'booking') ?></button>
@@ -77,12 +77,13 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                         <div class="input-group-prepend">
                             <span class="input-group-text">+998</span>
                         </div>
-                        {input}{error}{hint}</div>'
+                        {input}{error}{hint}
+                        </div>'
                 ])->textInput(['placeholder' => "Phone number"])->label(false); ?>
 
                 <?= $form->field($application, 'reCaptcha')->widget(ReCaptcha::className(),[
                         'siteKey' => '6Lfj2NQkAAAAAKOAbf7wxT39eiwJ-bghs9Rgv-sK'
-                ]) ?>
+                ])->label(false); ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

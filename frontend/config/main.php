@@ -53,6 +53,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'page' => 'site/page',
                 'about' => 'site/about',
                 'tours' => 'site/tours',
                 'tours-list' => 'site/tours-list',

@@ -7,6 +7,7 @@ use frontend\modules\admin\models\PagesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PagesController implements the CRUD actions for Pages model.
@@ -70,7 +71,13 @@ class PagesController extends Controller
         $model = new Pages();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($model->load($this->request->post())) {
+                $wallpaper = UploadedFile::getInstance($model, 'photo');
+                if ($wallpaper) {
+                    $src = Pages::wallpaper($wallpaper);
+                    $model->image = $src;
+                }
+                $model->save();
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -93,7 +100,13 @@ class PagesController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            $wallpaper = UploadedFile::getInstance($model, 'photo');
+            if ($wallpaper) {
+                $src = Pages::wallpaper($wallpaper);
+                $model->image = $src;
+            }
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

@@ -10,12 +10,16 @@ $this->params['breadcrumbs'][] = ['label' => 'Pages', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="pages-update">
+<div class="pages-update card">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="card-header">
+        <h1><?= Html::encode($this->title) ?></h1>
+    </div>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+    <div class="card-body">
+        <?= $this->render('_form', [
+            'model' => $model,
+        ]) ?>
+    </div>
 
 </div>

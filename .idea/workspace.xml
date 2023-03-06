@@ -3,9 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="1a6826ea-8346-48c3-bc01-4163348a681c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/TelegramUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/TelegramUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Pages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/controllers/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/pages/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/pages/_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/pages/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/pages/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/pages/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/pages/update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/pages/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/pages/view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/layouts/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/layouts/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/destinations.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/destinations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/single-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/single-blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,18 +172,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../old/Yii2/ict" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/views/site/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\views\site\pages" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\common" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\modules\admin\controllers" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\views\layouts" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\modules\admin\views\default" />
-      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\views" />
@@ -196,7 +208,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677475395758</updated>
       <workItem from="1677475397179" duration="20080000" />
-      <workItem from="1677840747215" duration="70802000" />
+      <workItem from="1677840747215" duration="79345000" />
     </task>
     <servers />
   </component>
@@ -258,10 +270,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="674" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1677502768527" />
-    <state x="690" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1678025879171">
+    <state x="690" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1678081246584">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="690" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1678025879171" />
+    <state x="690" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1678081246584" />
     <state x="2610" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1678010839512" />
     <state x="2660" y="271" key="FileChooserDialogImpl" timestamp="1678010270041">
       <screen x="1920" y="0" width="1920" height="1032" />

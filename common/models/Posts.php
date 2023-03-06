@@ -16,6 +16,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string|null $content_ru
  * @property string|null $content_en
  * @property int|null $category_id
+ * @property string|null $image
  * @property string|null $tags
  * @property int|null $status
  * @property int|null $created_at
@@ -23,6 +24,8 @@ use yii\behaviors\TimestampBehavior;
  */
 class Posts extends \yii\db\ActiveRecord
 {
+    public $photo;
+
     public function behaviors()
     {
         return [
@@ -47,6 +50,7 @@ class Posts extends \yii\db\ActiveRecord
             [['content_uz', 'content_ru', 'content_en'], 'string'],
             [['category_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['title_uz', 'title_ru', 'title_en', 'tags'], 'string', 'max' => 255],
+            [['photo'], 'file', 'skipOnEmpty' => true, 'extensions' => 'jpg, jpeg, png', 'maxFiles' => 1],
         ];
     }
 
@@ -74,5 +78,22 @@ class Posts extends \yii\db\ActiveRecord
     {
         $lang = Yii::$app->language;
         return $this[$model.'_'.$lang];
+    }
+
+    public static function wallpaper($avatar)
+    {
+        $base_directory = __DIR__ . '/../../frontend/web/osonturPosts';
+        $new_directory = $base_directory . '/' . date('Y') . '/' . date('m') . '/' . date('d');
+        $inside_directory = '/' . date('Y') . '/' . date('m') . '/' . date('d');
+        if ($avatar != null) {
+            if (!is_dir($new_directory)) {
+                mkdir($new_directory, 0777, true);
+            }
+            $filename = substr(sha1($avatar->baseName), 0, 20) . date("d-m-Y-H") . '.' . $avatar->extension;
+            $file_dir = $new_directory . '/' . $filename;
+            $avatar->saveAs($file_dir);
+            $src = $inside_directory . '/' . $filename;
+            return $src;
+        }
     }
 }

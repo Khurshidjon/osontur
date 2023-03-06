@@ -13,7 +13,7 @@ use yii\helpers\Url;
             <div class="col-xl-12">
                 <div class="bradcam_text text-center">
                     <h3><?= $destination ? $destination->translate('title') : 'Destinations' ?></h3>
-                    <p>Pixel perfect design with awesome contents</p>
+                    <p><?= Yii::t('app', 'travel_with_us') ?></p>
                 </div>
             </div>
         </div>
@@ -27,27 +27,27 @@ use yii\helpers\Url;
         <div class="row align-items-center">
             <div class="col-lg-3">
                 <div class="form_area">
-                    <h3>Where you want to go?</h3>
+                    <h3><?= Yii::t('app', 'where_want') ?></h3>
                 </div>
             </div>
             <div class="col-lg-9">
                 <div class="search_wrap">
                     <form class="search_form" action="#">
                         <div class="input_field">
-                            <input type="text" placeholder="Where to go?">
+                            <input type="text" placeholder="<?= Yii::t('app', 'where_want_place') ?>">
                         </div>
                         <div class="input_field">
-                            <input id="datepicker" placeholder="Date">
+                            <input id="datepicker" placeholder="<?= Yii::t('app', 'where_want_date') ?>">
                         </div>
                         <div class="input_field">
                             <select>
-                                <option data-display="Travel type">Travel type</option>
+                                <option data-display="<?= Yii::t('app', 'where_want_type') ?>"><?= Yii::t('app', 'where_want_type') ?></option>
                                 <option value="1">Some option</option>
                                 <option value="2">Another option</option>
                             </select>
                         </div>
                         <div class="search_btn">
-                            <button class="boxed-btn4 " type="submit">Search</button>
+                            <button class="boxed-btn4 " type="submit"><?= Yii::t('app', 'search_button') ?></button>
                         </div>
                     </form>
                 </div>
@@ -96,7 +96,7 @@ use yii\helpers\Url;
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="more_place_btn text-center">
-                            <a class="boxed-btn4" href="#">More Places</a>
+                            <a class="boxed-btn4" href="#"><?= Yii::t('app', 'more_places_button')?></a>
                         </div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ use yii\helpers\Url;
 </div>
 
 <!-- newletter_area_start  -->
-<div class="newletter_area overlay">
+<!--<div class="newletter_area overlay">
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-10">
@@ -138,9 +138,9 @@ use yii\helpers\Url;
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- newletter_area_end  -->
-<div class="recent_trip_area">
+<!--<div class="recent_trip_area">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -153,7 +153,7 @@ use yii\helpers\Url;
             <div class="col-lg-4 col-md-6">
                 <div class="single_trip">
                     <div class="thumb">
-                        <?= Html::img('/template/img/trip/1.png'); ?>
+                        <?/*= Html::img('/template/img/trip/1.png'); */?>
                     </div>
                     <div class="info">
                         <div class="date">
@@ -169,7 +169,7 @@ use yii\helpers\Url;
             <div class="col-lg-4 col-md-6">
                 <div class="single_trip">
                     <div class="thumb">
-                        <?= Html::img('/template/img/trip/2.png'); ?>
+                        <?/*= Html::img('/template/img/trip/2.png'); */?>
                     </div>
                     <div class="info">
                         <div class="date">
@@ -185,7 +185,7 @@ use yii\helpers\Url;
             <div class="col-lg-4 col-md-6">
                 <div class="single_trip">
                     <div class="thumb">
-                        <?= Html::img('/template/img/trip/3.png'); ?>
+                        <?/*= Html::img('/template/img/trip/3.png'); */?>
                     </div>
                     <div class="info">
                         <div class="date">
@@ -200,4 +200,4 @@ use yii\helpers\Url;
             </div>
         </div>
     </div>
-</div>
+</div>-->

@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\models\Applications;
 use common\models\Destinations;
+use common\models\Pages;
 use common\models\TelegramUser;
 use common\models\Tours;
 use frontend\models\ResendVerificationEmailForm;
@@ -139,6 +140,15 @@ class SiteController extends Controller
         $tour = Tours::findOne($id);
         return $this->render('pages/single-destination', [
             'tour' => $tour
+        ]);
+    }
+
+    public function actionPage($id)
+    {
+        $page = Pages::findOne($id);
+
+        return $this->render('pages/page', [
+            'page' => $page
         ]);
     }
 

@@ -66,68 +66,97 @@ AdminAsset::register($this);
                                 <i class="w-fa fas fa-tachometer-alt"></i>Dashboard
                             </a>
                         </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r">
-                                <i class="w-fa fas fa-image"></i>Pages
-                                <i class="fas fa-angle-down rotate-icon"></i>
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                        <a href="/admin/pages/login.html" class="waves-effect">Login</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/register.html" class="waves-effect">Register</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/pricing.html" class="waves-effect">Pricing</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/about.html" class="waves-effect">About us</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/single.html" class="waves-effect">Single post</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/post.html" class="waves-effect">Post listing</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/landing.html" class="waves-effect">Landing page</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/customers.html" class="waves-effect">Customers</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/invoice.html" class="waves-effect">Invoice</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/page-creator.html" class="waves-effect">Page Creator</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/support.html" class="waves-effect">Support</a>
-                                    </li>
-                                    <li>
-                                        <a href="/admin/pages/chat.html" class="waves-effect">Chat</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+<!--                        <li>-->
+<!--                            <a class="collapsible-header waves-effect arrow-r">-->
+<!--                                <i class="w-fa fas fa-image"></i>Pages-->
+<!--                                <i class="fas fa-angle-down rotate-icon"></i>-->
+<!--                            </a>-->
+<!--                            <div class="collapsible-body">-->
+<!--                                <ul>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/login.html" class="waves-effect">Login</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/register.html" class="waves-effect">Register</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/pricing.html" class="waves-effect">Pricing</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/about.html" class="waves-effect">About us</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/single.html" class="waves-effect">Single post</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/post.html" class="waves-effect">Post listing</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/landing.html" class="waves-effect">Landing page</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/customers.html" class="waves-effect">Customers</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/invoice.html" class="waves-effect">Invoice</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/page-creator.html" class="waves-effect">Page Creator</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/support.html" class="waves-effect">Support</a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="/admin/pages/chat.html" class="waves-effect">Chat</a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </li>-->
 
                         <!-- Simple link -->
-                        <li><a href="/admin/menu" class="collapsible-header waves-effect"><i
-                                        class="w-fa far fa-bell"></i>Menu</a></li>
-                        <li><a href="/admin/category" class="collapsible-header waves-effect"><i
-                                        class="w-fa far fa-bell"></i>Post Category</a></li>
-                        <li><a href="/admin/posts" class="collapsible-header waves-effect"><i
-                                        class="w-fa far fa-bell"></i>Posts</a></li>
-                        <li><a href="/admin/destination" class="collapsible-header waves-effect"><i
-                                        class="w-fa far fa-bell"></i>Destinations</a></li>
-                        <li><a href="/admin/tours" class="collapsible-header waves-effect"><i
-                                        class="w-fa far fa-bell"></i>Tours</a></li>
-                        <li><a href="/admin/application" class="collapsible-header waves-effect"><i
-                                        class="w-fa far fa-bell"></i>Applications <span class="badge badge-danger badge-pill"><?= \common\models\Applications::find()->count()?></span> </a></li>
-                        <li><a href="/admin/tg-user" class="collapsible-header waves-effect"><i
-                                        class="w-fa far fa-bell"></i>Telegram Users</li>
+                        <li>
+                            <a href="/admin/menu" class="collapsible-header waves-effect">
+                                <i class="w-fa far fa-bell"></i>Menu
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/pages" class="collapsible-header waves-effect">
+                                <i class="w-fa far fa-bell"></i>Pages
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/category" class="collapsible-header waves-effect">
+                                <i class="w-fa far fa-bell"></i>Post Category
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/posts" class="collapsible-header waves-effect">
+                                <i class="w-fa far fa-bell"></i>Posts
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/destination" class="collapsible-header waves-effect">
+                                <i class="w-fa far fa-bell"></i>Destinations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/tours" class="collapsible-header waves-effect">
+                                <i class="w-fa far fa-bell"></i>Tours
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/application" class="collapsible-header waves-effect">
+                                <i class="w-fa far fa-bell"></i>Applications
+                                <span class="badge badge-danger badge-pill">
+                                    <?= \common\models\Applications::find()->count()?>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/tg-user" class="collapsible-header waves-effect">
+                                <i class="w-fa far fa-bell"></i>Telegram Users
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <!-- Side navigation links -->

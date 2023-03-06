@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use mihaildev\ckeditor\CKEditor;
+use yii\helpers\ArrayHelper;
+use common\models\Menus;
 
 /** @var yii\web\View $this */
 /** @var common\models\Pages $model */
@@ -18,17 +21,36 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title_en')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content_uz')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content_uz')->widget(CKEditor::className(), [
+        'editorOptions' => [
+            'preset' => 'full',
+            'inline' => false,
+        ],
+    ]) ?>
 
-    <?= $form->field($model, 'content_ru')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content_ru')->widget(CKEditor::className(), [
+        'editorOptions' => [
+            'preset' => 'full',
+            'inline' => false,
+        ],
+    ]) ?>
 
-    <?= $form->field($model, 'content_en')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content_en')->widget(CKEditor::className(), [
+        'editorOptions' => [
+            'preset' => 'full',
+            'inline' => false,
+        ],
+    ]) ?>
+    <?= $form->field($model, 'photo')->fileInput(); ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'menu_id')->dropDownList(ArrayHelper::map(Menus::find()->all(), 'id', 'title_uz'), [
+            'prompt' => '-- select once --'
+    ]); ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+    <?= $form->field($model, 'status')->dropDownList([
+            1 => 'Active',
+            2 => 'No active',
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
