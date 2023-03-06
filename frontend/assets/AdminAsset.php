@@ -17,14 +17,17 @@ class AdminAsset extends AssetBundle
         'css/mdb.min.css',
     ];
     public $js = [
-        'js/jquery-3.4.1.min.js',
+//        'js/jquery-3.4.1.min.js',
         'js/popper.min.js',
         'js/bootstrap.js',
         'js/mdb.min.js',
         'js/modules/material-select.js',
+        'select2/dist/js/select2.full.min.js',
+        'ckeditor/ckeditor.js',
+        'ckeditor/styles.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap5\BootstrapAsset',
+//        'yii\bootstrap5\BootstrapAsset',
     ];
 }

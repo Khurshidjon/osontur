@@ -48,3 +48,24 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+
+<?php
+$js = <<<JS
+    CKEDITOR.replace('posts-content_uz', {
+        filebrowserBrowseUrl: '/adminTemplate/filemanager/dialog.php',
+        filebrowserUploadUrl: '/adminTemplate/filemanager/upload.php',
+    });
+    CKEDITOR.replace('posts-content_ru', {
+        filebrowserBrowseUrl: '/adminTemplate/filemanager/dialog.php',
+        filebrowserUploadUrl: '/adminTemplate/filemanager/upload.php'
+    });
+    CKEDITOR.replace('posts-content_en', {
+        filebrowserBrowseUrl: '/adminTemplate/filemanager/dialog.php',
+        filebrowserUploadUrl: '/adminTemplate/filemanager/upload.php'
+    });
+    
+JS;
+
+$this->registerJs($js, \yii\web\View::POS_END);
+//?>
+

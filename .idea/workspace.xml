@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6826ea-8346-48c3-bc01-4163348a681c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/osontur.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/osontur.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/Pages.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Pages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/controllers/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/AdminAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/AdminAsset.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/pages/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/pages/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/pages/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/pages/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/pages/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/pages/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/pages/update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/pages/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/pages/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/layouts/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/destinations.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/destinations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/single-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/single-blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/posts/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/posts/_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/tours/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/tours/_form.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +147,8 @@
       <path value="$PROJECT_DIR$/vendor/lubosdz/yii2-captcha-extended" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-httpclient" />
       <path value="$PROJECT_DIR$/vendor/himiklab/yii2-recaptcha-widget" />
+      <path value="$PROJECT_DIR$/vendor/tinymce/tinymce" />
+      <path value="$PROJECT_DIR$/vendor/2amigos/yii2-tinymce-widget" />
     </include_path>
   </component>
   <component name="ProjectId" id="2MJAd5D1pDvMmHwYtJi6WqBsdaS" />
@@ -172,20 +167,22 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/views/site/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/web/adminTemplate/filebrowser" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\web\adminTemplate\filebrowser" />
+      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\web\adminTemplate" />
+      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\web\template\css" />
+      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\web" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\views\site\pages" />
-      <recent name="C:\OpenServer\domains\shaxsiy\osontur\common" />
-      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\modules\admin\controllers" />
-      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\views\layouts" />
-      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\modules\admin\views\default" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\web\adminTemplate" />
+      <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\web\template" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\views" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\controllers" />
       <recent name="C:\OpenServer\domains\shaxsiy\osontur\frontend\web\template\js" />
@@ -208,7 +205,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677475395758</updated>
       <workItem from="1677475397179" duration="20080000" />
-      <workItem from="1677840747215" duration="79345000" />
+      <workItem from="1677840747215" duration="90769000" />
     </task>
     <servers />
   </component>
@@ -279,10 +276,10 @@
       <screen x="1920" y="0" width="1920" height="1032" />
     </state>
     <state x="2660" y="271" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1678010270041" />
-    <state x="2714" y="439" key="NewPhpFileDialog" timestamp="1677931872383">
-      <screen x="1920" y="0" width="1920" height="1032" />
+    <state x="794" y="439" key="NewPhpFileDialog" timestamp="1678101056871">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1677588812147" />
+    <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1678101056871" />
     <state x="2714" y="439" key="NewPhpFileDialog/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1677931872383" />
     <state x="727" y="227" key="RollbackChangesDialog" timestamp="1677479456417">
       <screen x="0" y="0" width="1920" height="1032" />

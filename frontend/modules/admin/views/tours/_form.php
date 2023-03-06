@@ -21,25 +21,11 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'title_en')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content_uz')->widget(CKEditor::className(), [
-        'editorOptions' => [
-            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-            'inline' => false, //по умолчанию false
-        ],
-    ]) ?>
+    <?= $form->field($model, 'content_uz')->textarea() ?>
 
-    <?= $form->field($model, 'content_ru')->widget(CKEditor::className(), [
-        'editorOptions' => [
-            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-            'inline' => false, //по умолчанию false
-        ],
-    ]) ?>
-    <?= $form->field($model, 'content_en')->widget(CKEditor::className(), [
-        'editorOptions' => [
-            'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-            'inline' => false, //по умолчанию false
-        ],
-    ]) ?>
+    <?= $form->field($model, 'content_ru')->textarea(); ?>
+
+    <?= $form->field($model, 'content_en')->textarea(); ?>
 
     <?= $form->field($model, 'image')->fileInput() ?>
 
@@ -59,3 +45,24 @@ use mihaildev\ckeditor\CKEditor;
     <?php ActiveForm::end(); ?>
 
 </div>
+
+<?php
+$js = <<<JS
+    CKEDITOR.replace('tours-content_uz', {
+        filebrowserBrowseUrl: '/adminTemplate/filemanager/dialog.php',
+        filebrowserUploadUrl: '/adminTemplate/filemanager/upload.php',
+    });
+    CKEDITOR.replace('tours-content_ru', {
+        filebrowserBrowseUrl: '/adminTemplate/filemanager/dialog.php',
+        filebrowserUploadUrl: '/adminTemplate/filemanager/upload.php'
+    });
+    CKEDITOR.replace('tours-content_en', {
+        filebrowserBrowseUrl: '/adminTemplate/filemanager/dialog.php',
+        filebrowserUploadUrl: '/adminTemplate/filemanager/upload.php'
+    });
+    
+JS;
+
+$this->registerJs($js, \yii\web\View::POS_END);
+//?>
+
