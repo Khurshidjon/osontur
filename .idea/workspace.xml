@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6826ea-8346-48c3-bc01-4163348a681c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/Applications.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Applications.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/PostCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/PostCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/controllers/PostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/posts/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/posts/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/layouts/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/web/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/web/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +198,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677475395758</updated>
       <workItem from="1677475397179" duration="20080000" />
-      <workItem from="1677840747215" duration="108402000" />
+      <workItem from="1677840747215" duration="108836000" />
     </task>
     <servers />
   </component>

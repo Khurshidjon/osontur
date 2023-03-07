@@ -251,7 +251,7 @@ use himiklab\yii2\recaptcha\ReCaptcha;
         <div class="row">
             <div class="col-lg-12">
                 <div class="more_place_btn text-center">
-                    <a class="boxed-btn4" href="#"><?= Yii::t('app', 'more_places_button') ?></a>
+                    <a class="boxed-btn4" href="<?= Url::toRoute(['tours-list']) ?>"><?= Yii::t('app', 'more_places_button') ?></a>
                 </div>
             </div>
         </div>
