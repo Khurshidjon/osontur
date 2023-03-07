@@ -30,6 +30,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'content_en')->textarea(['rows' => 6]) ?>
 
+    <?= $form->field($model, 'photo')->fileInput(); ?>
+
     <?= $form->field($model, 'category_id')->dropDownList(\yii\helpers\ArrayHelper::map(\common\models\PostCategory::find()->asArray()->all(), 'id', 'title_uz'), [
             'prompt' => '-- select once --'
     ]) ?>

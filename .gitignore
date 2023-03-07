@@ -8,3 +8,5 @@ vendor/*
 frontend/runtime/
 frontend/web/destinationFiles
 frontend/web/toursFiles
+frontend/web/osonturPosts
+frontend/web/osonturPages

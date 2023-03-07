@@ -79,7 +79,11 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                         </div>
                         {input}{error}{hint}
                         </div>'
-                ])->textInput(['placeholder' => "Phone number"])->label(false); ?>
+                ])->widget(\yii\widgets\MaskedInput::class, [
+                    'mask' => '99 999 99 99',
+                    'options' => [
+                        'placeholder' => '90 123 45 67'
+                    ]])->label(false); ?>
 
                 <?= $form->field($application, 'reCaptcha')->widget(ReCaptcha::className(),[
                         'siteKey' => '6Lfj2NQkAAAAAKOAbf7wxT39eiwJ-bghs9Rgv-sK'

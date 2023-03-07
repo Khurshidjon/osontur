@@ -12,6 +12,10 @@ use yii\behaviors\TimestampBehavior;
  * @property string|null $fio
  * @property string|null $phone_number
  * @property int|null $status
+ * @property string|null $message
+ * @property string|null $email
+ * @property string|null $answer_from_phone
+ * @property string|null $answer_from_email
  * @property int|null $created_at
  * @property int|null $updated_at
  */
@@ -40,11 +44,19 @@ class Applications extends \yii\db\ActiveRecord
      */
     public function rules()
     {
+        if (!$this->answer_from_email){
+            $answer_rules_row = [['email'], 'safe'];
+        }else{
+            $answer_rules_row = [['email'], 'required'];
+        }
+
         return [
-            [['status', 'created_at', 'updated_at'], 'integer'],
-            [['fio', 'phone_number'], 'string', 'max' => 255],
+            [['status', 'created_at', 'updated_at', 'answer_from_email', 'answer_from_phone'], 'integer'],
+            [['fio', 'phone_number', 'email'], 'string', 'max' => 255],
+            [['message'], 'string', 'max' => 500],
             [['fio', 'phone_number'], 'required'],
-            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className(), 'secret' => '6Lfj2NQkAAAAAFBFzBCjxOMHIsi4zh_BgVt8Kf_P']
+            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className(), 'secret' => '6Lfj2NQkAAAAAFBFzBCjxOMHIsi4zh_BgVt8Kf_P'],
+            $answer_rules_row,
         ];
     }
 

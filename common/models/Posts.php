@@ -80,6 +80,11 @@ class Posts extends \yii\db\ActiveRecord
         return $this[$model.'_'.$lang];
     }
 
+    public function getCategory()
+    {
+        return $this->hasOne(PostCategory::class, ['id' => 'category_id']);
+    }
+
     public static function wallpaper($avatar)
     {
         $base_directory = __DIR__ . '/../../frontend/web/osonturPosts';

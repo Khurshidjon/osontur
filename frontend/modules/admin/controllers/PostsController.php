@@ -7,6 +7,7 @@ use frontend\modules\admin\models\PostsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PostsController implements the CRUD actions for Posts model.
@@ -71,6 +72,11 @@ class PostsController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
+                $wallpaper = UploadedFile::getInstance($model, 'photo');
+                if ($wallpaper) {
+                    $src = Posts::wallpaper($wallpaper);
+                    $model->image = $src;
+                }
                 if ($model->status == 'on'){
                     $model->status = 1;
                 }
@@ -97,7 +103,16 @@ class PostsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            $wallpaper = UploadedFile::getInstance($model, 'photo');
+            if ($wallpaper) {
+                $src = Posts::wallpaper($wallpaper);
+                $model->image = $src;
+            }
+            if ($model->status == 'on'){
+                $model->status = 1;
+            }
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

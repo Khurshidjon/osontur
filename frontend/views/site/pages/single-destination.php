@@ -1,10 +1,15 @@
 <?php
+
 use yii\bootstrap5\Html;
 use yii\helpers\Url;
+use yii\bootstrap5\ActiveForm;
+use himiklab\yii2\recaptcha\ReCaptcha;
+
 /** @var common\models\Tours $tour */
+/** @var common\models\Applications $application */
 ?>
 
-<div class="destination_banner_wrap overlay" style="background-image: url('/toursFiles<?= $tour->wallpaper?>')">
+<div class="destination_banner_wrap overlay" style="background-image: url('/toursFiles<?= $tour->wallpaper ?>')">
     <div class="destination_text text-center">
         <h3><?= $tour->translate('title') ?></h3>
         <p>Pixel perfect design with awesome contents</p>
@@ -21,30 +26,42 @@ use yii\helpers\Url;
                 <div class="bordered_1px"></div>
                 <div class="contact_join">
                     <h3>Contact for join</h3>
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single_input">
-                                    <input type="text" placeholder="Your Name">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single_input">
-                                    <input type="text" placeholder="Phone no.">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="single_input">
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="Message" ></textarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="submit_btn">
-                                    <button class="boxed-btn4" type="submit">submit</button>
-                                </div>
+                    <?php $form = ActiveForm::begin(); ?>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="single_input">
+                                <?= $form->field($application, 'fio')->textInput(['placeholder' => 'Full name'])->label(false); ?>
                             </div>
                         </div>
-                    </form>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="single_input">
+                                <?= $form->field($application, 'phone_number')->widget(\yii\widgets\MaskedInput::class, [
+                                    'mask' => '99 999 99 99',
+                                    'options' => [
+                                            'placeholder' => '90 123 45 67'
+                                    ]
+                                ])->label(false); ?>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="single_input">
+                                <?= $form->field($application, 'message')->textarea(['placeholder' => 'Message'])->label(false); ?>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="single_input">
+                                <?= $form->field($application, 'reCaptcha')->widget(ReCaptcha::className(),[
+                                    'siteKey' => '6Lfj2NQkAAAAAKOAbf7wxT39eiwJ-bghs9Rgv-sK'
+                                ])->label(false); ?>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="submit_btn">
+                                <button class="boxed-btn4" type="submit">submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <?php ActiveForm::end(); ?>
                 </div>
             </div>
         </div>
@@ -69,12 +86,12 @@ use yii\helpers\Url;
                             <div class="row no-gutters">
                                 <div class="col-lg-9 col-md-8">
                                     <div class="newsletter_field">
-                                        <input type="email" placeholder="Your mail" >
+                                        <input type="email" placeholder="Your mail">
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4">
                                     <div class="newsletter_btn">
-                                        <button class="boxed-btn4 " type="submit" >Subscribe</button>
+                                        <button class="boxed-btn4 " type="submit">Subscribe</button>
                                     </div>
                                 </div>
                             </div>
@@ -85,96 +102,3 @@ use yii\helpers\Url;
         </div>
     </div>
 </div>
-<!-- newletter_area_end  -->
-<!---->
-<!--<div class="popular_places_area">-->
-<!--    <div class="container">-->
-<!--        <div class="row justify-content-center">-->
-<!--            <div class="col-lg-6">-->
-<!--                <div class="section_title text-center mb_70">-->
-<!--                    <h3>More Places</h3>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-4 col-md-6">-->
-<!--                <div class="single_place">-->
-<!--                    <div class="thumb">-->
-<!--                        --><?//= Html::img('/template/img/place/1.png')?>
-<!--                        <a href="#" class="prise">$500</a>-->
-<!--                    </div>-->
-<!--                    <div class="place_info">-->
-<!--                        <a href="--><?//= Url::toRoute(['single-destination'])?><!--"><h3>California</h3></a>-->
-<!--                        <p>United State of America</p>-->
-<!--                        <div class="rating_days d-flex justify-content-between">-->
-<!--                                <span class="d-flex justify-content-center align-items-center">-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <a href="#">(20 Review)</a>-->
-<!--                                </span>-->
-<!--                            <div class="days">-->
-<!--                                <i class="fa fa-clock-o"></i>-->
-<!--                                <a href="#">5 Days</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-lg-4 col-md-6">-->
-<!--                <div class="single_place">-->
-<!--                    <div class="thumb">-->
-<!--                        --><?//= Html::img('/template/img/place/2.png')?>
-<!--                        <a href="#" class="prise">$500</a>-->
-<!--                    </div>-->
-<!--                    <div class="place_info">-->
-<!--                        <a href="--><?//= Url::toRoute(['single-destination'])?><!--"><h3>Korola Megna</h3></a>-->
-<!--                        <p>United State of America</p>-->
-<!--                        <div class="rating_days d-flex justify-content-between">-->
-<!--                                <span class="d-flex justify-content-center align-items-center">-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <a href="#">(20 Review)</a>-->
-<!--                                </span>-->
-<!--                            <div class="days">-->
-<!--                                <i class="fa fa-clock-o"></i>-->
-<!--                                <a href="#">5 Days</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-lg-4 col-md-6">-->
-<!--                <div class="single_place">-->
-<!--                    <div class="thumb">-->
-<!--                        --><?//= Html::img('/template/img/place/3.png')?>
-<!--                        <a href="#" class="prise">$500</a>-->
-<!--                    </div>-->
-<!--                    <div class="place_info">-->
-<!--                        <a href="--><?//= Url::toRoute(['single-destination'])?><!--"><h3>London</h3></a>-->
-<!--                        <p>United State of America</p>-->
-<!--                        <div class="rating_days d-flex justify-content-between">-->
-<!--                                <span class="d-flex justify-content-center align-items-center">-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <i class="fa fa-star"></i>-->
-<!--                                     <a href="#">(20 Review)</a>-->
-<!--                                </span>-->
-<!--                            <div class="days">-->
-<!--                                <i class="fa fa-clock-o"></i>-->
-<!--                                <a href="#">5 Days</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->

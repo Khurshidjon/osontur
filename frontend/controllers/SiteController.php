@@ -5,6 +5,8 @@ namespace frontend\controllers;
 use common\models\Applications;
 use common\models\Destinations;
 use common\models\Pages;
+use common\models\PostCategory;
+use common\models\Posts;
 use common\models\TelegramUser;
 use common\models\Tours;
 use frontend\models\ResendVerificationEmailForm;
@@ -93,18 +95,17 @@ class SiteController extends Controller
         $model = Destinations::find();
         $wallpapers = $model->where(['is_banner' => 1])->all();
         $destinations = $model->all();
-
+        $tours = Tours::find()->all();
         $application = new Applications();
         if ($this->request->isPost) {
             if ($application->load($this->request->post())) {
-                if ($application->save()){
-                    $this->actionBooking($application->fio, $application->phone_number);
+                if ($application->save()) {
+                    $this->actionBooking($application);
                     return $this->response->redirect('/');
                 }
             }
         }
 
-        $tours = Tours::find()->all();
         return $this->render('index', [
             'wallpapers' => $wallpapers,
             'destinations' => $destinations,
@@ -138,8 +139,18 @@ class SiteController extends Controller
     public function actionSingleDestination($id = null)
     {
         $tour = Tours::findOne($id);
+        $application = new Applications();
+        if ($this->request->isPost) {
+            if ($application->load($this->request->post())) {
+                if ($application->save(false)) {
+                    $this->actionBooking($application);
+                    return $this->redirect(Yii::$app->request->referrer);
+                }
+            }
+        }
         return $this->render('pages/single-destination', [
-            'tour' => $tour
+            'tour' => $tour,
+            'application' => $application
         ]);
     }
 
@@ -152,27 +163,60 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionBlog()
+    public function actionPosts()
     {
-        return $this->render('pages/blog');
+        $posts = Posts::find()->where(['status' => 1])->all();
+        $postCategories = PostCategory::find()->where(['status' => 1])->all();
+        return $this->render('pages/posts', [
+            'posts' => $posts,
+            'postCategories' => $postCategories,
+        ]);
     }
 
-    public function actionSingleBlog()
+    public function actionSinglePost()
     {
         return $this->render('pages/single-blog');
     }
 
-    public function actionBooking($fio, $phone)
+
+    public function actionContacts()
     {
+        $application = new Applications();
+        if ($this->request->isPost) {
+            if ($application->load($this->request->post())) {
+                if ($application->save(false)) {
+                    $this->actionBooking($application);
+                    return $this->redirect(Yii::$app->request->referrer);
+                }
+            }
+        }
+        return $this->render('pages/contacts', [
+            'application' => $application
+        ]);
+    }
+
+
+    public function actionBooking($application)
+    {
+        $fio = $application->fio;
+        $phone = $application->phone_number;
+        $message = $application->message;
+
         $admins = TelegramUser::find()->where(['role' => 2])->all();
         $text = '';
         $text .= "<b>Yangi buyurtma</b>\n\n";
         $text .= "<b>FIO: </b>$fio\n";
         $text .= "<b>Tel: </b> +998$phone \n";
-        $text .= "\n\n";
-        $text .= "<b>Agar yuborilgan raqam telegramda mavjud bo'lsa unga yozish: </b>". str_replace(" ", "", "https://t.me/+998".$phone);
 
-        foreach ($admins as $admin){
+        if ($message) {
+            $text .= "<b>Xabar: </b>$message \n";
+        }
+
+        $text .= "\n\n";
+
+        $text .= "<b>Agar yuborilgan raqam telegramda mavjud bo'lsa unga yozish: </b>" . str_replace(" ", "", "https://t.me/+998" . $phone);
+
+        foreach ($admins as $admin) {
             $chat_id = $admin->telegram_id;
 
             Yii::$app->telegram->sendMessage([
@@ -251,7 +295,7 @@ class SiteController extends Controller
         if ($nsUser->step == 2 && isset($contact)) {
             $nsUser->phone_number = $contact['phone_number'];
             $nsUser->step = 3; // save contact
-            if ($nsUser->save(false)){
+            if ($nsUser->save(false)) {
                 $app = new Applications();
                 $app->fio = $nsUser->nickname;
                 $app->phone_number = $nsUser->phone_number;

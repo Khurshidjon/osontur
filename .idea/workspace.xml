@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6826ea-8346-48c3-bc01-4163348a681c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Applications.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Applications.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/PostCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/PostCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/controllers/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/posts/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/posts/_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/layouts/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/web/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +210,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677475395758</updated>
       <workItem from="1677475397179" duration="20080000" />
-      <workItem from="1677840747215" duration="90842000" />
+      <workItem from="1677840747215" duration="108402000" />
     </task>
     <servers />
   </component>
@@ -259,20 +272,20 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="674" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1677502768527" />
-    <state x="690" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1678081246584">
+    <state x="690" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1678161709062">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="690" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1678081246584" />
+    <state x="690" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1678161709062" />
     <state x="2610" y="271" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1678010839512" />
     <state x="2660" y="271" key="FileChooserDialogImpl" timestamp="1678010270041">
       <screen x="1920" y="0" width="1920" height="1032" />
     </state>
     <state x="2660" y="271" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1678010270041" />
-    <state x="794" y="439" key="NewPhpFileDialog" timestamp="1678101056871">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state x="2714" y="439" key="NewPhpFileDialog" timestamp="1678180436008">
+      <screen x="1920" y="0" width="1920" height="1032" />
     </state>
     <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1678101056871" />
-    <state x="2714" y="439" key="NewPhpFileDialog/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1677931872383" />
+    <state x="2714" y="439" key="NewPhpFileDialog/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1678180436008" />
     <state x="727" y="227" key="RollbackChangesDialog" timestamp="1677479456417">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -293,11 +306,11 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="92" y="92" width="1736" height="848" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1677502411285" />
-    <state x="2536" y="238" width="672" height="677" key="run.anything.popup" timestamp="1677850862703">
+    <state x="2536" y="238" width="672" height="677" key="run.anything.popup" timestamp="1678189916913">
       <screen x="1920" y="0" width="1920" height="1032" />
     </state>
     <state x="616" y="238" key="run.anything.popup/0.0.1920.1032/1920.0.1920.1032@0.0.1920.1032" timestamp="1677585692877" />
-    <state x="2536" y="238" width="672" height="677" key="run.anything.popup/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1677850862703" />
+    <state x="2536" y="238" width="672" height="677" key="run.anything.popup/0.0.1920.1032/1920.0.1920.1032@1920.0.1920.1032" timestamp="1678189916913" />
     <state x="616" y="169" width="672" height="676" key="search.everywhere.popup" timestamp="1678031267327">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
