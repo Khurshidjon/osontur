@@ -40,15 +40,15 @@ $('.slider_active').owlCarousel({
   autoplay:true,
   navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
   nav:true,
-  dots:false,
-  autoplayHoverPause: true,
-  autoplaySpeed: 800,
+  dots:true,
+  autoplayHoverPause: false,
+  autoplaySpeed: 100,
   animateOut: 'fadeOut',
   animateIn: 'fadeIn',
   responsive:{
       0:{
           items:1,
-          nav:false,
+          nav:true,
       },
       767:{
           items:1
@@ -133,11 +133,11 @@ $( function() {
     $(this).addClass('active');
     event.preventDefault();
 	});
-  
+
   // wow js
   new WOW().init();
 
-  // counter 
+  // counter
   $('.counter').counterUp({
     delay: 10,
     time: 10000
@@ -312,7 +312,7 @@ $(document).ready(function() {
 
 
 
-//------- Mailchimp js --------//  
+//------- Mailchimp js --------//
 function mailChimp() {
   $('#mc_embed_signup').find('form').ajaxChimp();
 }
@@ -339,8 +339,7 @@ mailChimp();
           $('select').niceSelect();
         });
 
-        // prise slider 
-        
+        // prise slider
 
 
 
@@ -348,4 +347,5 @@ mailChimp();
 
 
 
-})(jQuery);	
+
+})(jQuery);

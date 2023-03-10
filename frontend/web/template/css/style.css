@@ -906,12 +906,20 @@ h3 {
   .header-area .main-header-area .logo-img {
     text-align: left;
   }
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 45, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_header.scss */
   .header-area .main-header-area .logo-img {
     text-align: left;
+  }
+  .logo img {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -920,12 +928,25 @@ h3 {
   .header-area .main-header-area .logo-img {
     text-align: left;
   }
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+@media (min-width: 1200px) and (max-width: 2000px) {
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 @media (max-width: 767px) {
   /* line 59, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_header.scss */
   .header-area .main-header-area .logo-img img {
-    width: 70px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -933,6 +954,10 @@ h3 {
   /* line 59, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_header.scss */
   .header-area .main-header-area .logo-img img {
     width: 70px;
+  }
+  .logo img {
+    width: 40px;
+    height: 40px;
   }
 }
 

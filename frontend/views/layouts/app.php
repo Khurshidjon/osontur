@@ -72,7 +72,7 @@ AppAsset::register($this);
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
                                 <a href="/">
-                                    <?= Html::img('/template/img/logo.jpg', ['style' => 'width: 70px'])?>
+                                    <?= Html::img('/template/img/logo.jpg')?>
                                 </a>
                             </div>
                         </div>

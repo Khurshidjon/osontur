@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1a6826ea-8346-48c3-bc01-4163348a681c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/layouts/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/template/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/web/template/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/template/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/web/template/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +162,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/web/adminTemplate/filebrowser" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -198,7 +200,8 @@
       <option name="presentableId" value="Default" />
       <updated>1677475395758</updated>
       <workItem from="1677475397179" duration="20080000" />
-      <workItem from="1677840747215" duration="108836000" />
+      <workItem from="1677840747215" duration="109457000" />
+      <workItem from="1678419922067" duration="1050000" />
     </task>
     <servers />
   </component>
