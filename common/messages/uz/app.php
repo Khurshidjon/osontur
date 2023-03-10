@@ -3,6 +3,7 @@
 return [
     'travel_with_us' => 'Biz bilan dunyo bo\'ylab sayohat qiling, ajoyib takliflarimiz faqat siz uchun',
     'booking' => 'Hoziroq buyurtma bering',
+    'learn_more' => 'Batafsil ma\'lumot',
     'where_want' => 'Qayerga bormoqchisiz?',
     'where_want_place' => 'Qayerga?',
     'where_want_date' => 'Qachon?',

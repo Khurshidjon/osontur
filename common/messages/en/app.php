@@ -3,6 +3,7 @@
 return [
     'travel_with_us' => 'Travel the world with us, our amazing offers are just for you',
     'booking' => 'Book now',
+    'learn_more' => 'More details',
     'where_want' => 'Where you want to go?',
     'where_want_place' => 'Where to go?',
     'where_want_date' => 'Date',

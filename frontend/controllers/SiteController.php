@@ -93,9 +93,10 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $model = Destinations::find();
-        $wallpapers = $model->where(['is_banner' => 1])->all();
         $destinations = $model->all();
-        $tours = Tours::find()->all();
+        $toursModel = Tours::find();
+        $tours = $toursModel->all();
+        $wallpapers = $toursModel->where(['is_carousel' => 1])->all();
         $application = new Applications();
         if ($this->request->isPost) {
             if ($application->load($this->request->post())) {

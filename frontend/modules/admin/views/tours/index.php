@@ -13,7 +13,7 @@ use yii\grid\GridView;
 $this->title = 'Tours';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tours-index card mb-5">
+<div class="tours-index card mb-5 table-responsive">
     <div class="card-header">
 
         <h1><?= Html::encode($this->title) ?></h1>
@@ -21,8 +21,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <p>
             <?= Html::a('Create Tours', ['create'], ['class' => 'btn btn-success']) ?>
         </p>
-
-        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     </div>
 
@@ -38,13 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'title_ru',
                 'title_en',
                 'content_uz:ntext',
-                //'content_ru:ntext',
-                //'content_en:ntext',
-                //'price',
-                //'days',
-                //'destination_id',
-                //'created_at',
-                //'updated_at',
                 [
                     'class' => ActionColumn::className(),
                     'urlCreator' => function ($action, Tours $model, $key, $index, $column) {

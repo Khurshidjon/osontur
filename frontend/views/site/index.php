@@ -39,7 +39,7 @@ use himiklab\yii2\recaptcha\ReCaptcha;
     <div class="slider_active owl-carousel">
         <?php foreach ($wallpapers as $wallpaper): ?>
             <div class="single_slider d-flex align-items-center slider_bg_1 overlay"
-                 style="background-image: url('/destinationFiles<?= $wallpaper->wallpaper ?>')">
+                 style="background-image: url('/toursFiles<?= $wallpaper->wallpaper ?>')">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xl-12 col-md-12">
@@ -48,6 +48,7 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                                 <p><?= Yii::t('app', 'travel_with_us') ?></p>
                                 <button type="button" class="btn btn-primary boxed-btn3" data-toggle="modal"
                                         data-target="#staticBackdrop"><?= Yii::t('app', 'booking') ?></button>
+                                <a href="<?= Url::toRoute(['single-destination', 'id' => $wallpaper->id]) ?>" class="btn btn-outline-primary boxed-btn3"><?= Yii::t('app', 'learn_more') ?></a>
                             </div>
                         </div>
                     </div>

@@ -27,6 +27,17 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'content_en')->textarea(); ?>
 
+    <hr>
+    <div class="switch">
+        <p>Banner ko'rinishda chiqsinmi?</p>
+        <label>
+            Yo'q
+            <input type="checkbox" checked="checked" id="destinations-is_banner" name="Tours[is_carousel]">
+            <span class="lever"></span> Ha
+        </label>
+    </div>
+    <hr>
+
     <?= $form->field($model, 'image')->fileInput() ?>
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>

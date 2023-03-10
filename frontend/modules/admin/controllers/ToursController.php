@@ -77,6 +77,11 @@ class ToursController extends Controller
                     $src = Tours::wallpaper($wallpaper);
                     $model->wallpaper = $src;
                 }
+                if ($model->is_carousel == 'on'){
+                    $model->is_carousel = 1;
+                }else{
+                    $model->is_carousel = 0;
+                }
                 $model->save();
                 return $this->redirect(['view', 'id' => $model->id]);
             }
@@ -105,6 +110,11 @@ class ToursController extends Controller
             if ($wallpaper) {
                 $src = Tours::wallpaper($wallpaper);
                 $model->wallpaper = $src;
+            }
+            if ($model->is_carousel == 'on'){
+                $model->is_carousel = 1;
+            }else{
+                $model->is_carousel = 0;
             }
             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
