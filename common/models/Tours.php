@@ -12,6 +12,9 @@ use yii\behaviors\TimestampBehavior;
  * @property string|null $title_uz
  * @property string|null $title_ru
  * @property string|null $title_en
+ * @property string|null $description_uz
+ * @property string|null $description_ru
+ * @property string|null $description_en
  * @property string|null $content_uz
  * @property string|null $content_ru
  * @property string|null $content_en
@@ -49,6 +52,7 @@ class Tours extends \yii\db\ActiveRecord
     {
         return [
             [['content_uz', 'content_ru', 'content_en'], 'string'],
+            [['description_uz', 'description_ru', 'description_en'], 'string', 'max' => 700],
             [['days', 'destination_id', 'created_at', 'updated_at', 'is_carousel'], 'integer'],
             [['title_uz', 'title_ru', 'title_en', 'price'], 'string', 'max' => 255],
             [['image'], 'file', 'skipOnEmpty' => true, 'extensions' => 'jpg, jpeg, png', 'maxFiles' => 1],
@@ -65,6 +69,9 @@ class Tours extends \yii\db\ActiveRecord
             'title_uz' => 'Title Uz',
             'title_ru' => 'Title Ru',
             'title_en' => 'Title En',
+            'description_uz' => 'Description Uz',
+            'description_ru' => 'Description Ru',
+            'description_en' => 'Description En',
             'content_uz' => 'Content Uz',
             'content_ru' => 'Content Ru',
             'content_en' => 'Content En',

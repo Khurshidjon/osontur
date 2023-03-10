@@ -21,6 +21,12 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'title_en')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'description_uz')->textarea(['row' => 6]) ?>
+
+    <?= $form->field($model, 'description_ru')->textarea(['row' => 6]) ?>
+
+    <?= $form->field($model, 'description_en')->textarea(['row' => 6]) ?>
+
     <?= $form->field($model, 'content_uz')->textarea() ?>
 
     <?= $form->field($model, 'content_ru')->textarea(); ?>

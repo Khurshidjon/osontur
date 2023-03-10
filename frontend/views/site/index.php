@@ -45,7 +45,7 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                         <div class="col-xl-12 col-md-12">
                             <div class="slider_text text-center">
                                 <h3><?= $wallpaper->translate('title') ?></h3>
-                                <p><?= Yii::t('app', 'travel_with_us') ?></p>
+                                <p><?= $wallpaper->translate('description') ?></p>
                                 <button type="button" class="btn btn-primary boxed-btn3" data-toggle="modal"
                                         data-target="#staticBackdrop"><?= Yii::t('app', 'booking') ?></button>
                                 <a href="<?= Url::toRoute(['single-destination', 'id' => $wallpaper->id]) ?>" class="btn btn-outline-primary boxed-btn3"><?= Yii::t('app', 'learn_more') ?></a>
