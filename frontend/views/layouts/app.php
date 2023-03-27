@@ -141,11 +141,11 @@ AppAsset::register($this);
     <div class="footer_top">
         <div class="container">
             <div class="row">
-                <div class="col-xl-4 col-md-6 col-lg-4">
+                <div class="col-xl-4 col-md-4 col-lg-4">
                     <div class="footer_widget">
                         <div class="footer_logo">
                             <a href="#">
-                                <img src="./template/img/logo.jpg" alt="" width="120">
+                                <?= Html::img('template/img/logo.jpg', ['class' => 'img-fluid img-thumbnail',  'width' => '120']); ?>
                             </a>
                         </div>
                         <p>Toshkent shahri, Mirobod tumani, <br> AFROSIYOB KO'CHASI, FAROVON MFY, 14/2-UY <br>
@@ -197,14 +197,21 @@ AppAsset::register($this);
                        </div>
                     </div>
                 </div>
-                <div class="col-xl-8 col-md-6 col-lg-8">
+                <div class="col-xl-5 col-md-5 col-lg-5">
                     <div class="footer_widget">
                         <div style="position:relative;overflow:hidden;">
                             <a href="https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Toshkent</a><a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdAFpT0cFQFprfX54eX9qYg==/?ll=69.270371%2C41.298402&utm_medium=mapframe&utm_source=maps&z=17.78" style="color:#eee;font-size:12px;position:absolute;top:14px;">Afrosiyob koʻchasi, 14/2 — Yandex Xarita</a><iframe src="https://yandex.uz/map-widget/v1/?ll=69.270371%2C41.298402&mode=whatshere&whatshere%5Bpoint%5D=69.269464%2C41.298479&whatshere%5Bzoom%5D=17&z=17.78" width="100%" height="360" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe>
                         </div>
                     </div>
                 </div>
-<!--                <div class="col-xl-3 col-md-6 col-lg-3">-->
+                <div class="col-xl-3 col-md-3 col-lg-3">
+                    <div class="">
+                        <a href="https://www.apelsin.uz/open-service?serviceId=498605713">
+                            <?= Html::img('/template/pay/uzumbank.png', ['class' => 'img-fluid img-thumbnail']); ?>
+                        </a>
+                    </div>
+                </div>
+                <!--                <div class="col-xl-3 col-md-6 col-lg-3">-->
 <!--                    <div class="footer_widget">-->
 <!--                        <h3 class="footer_title">-->
 <!--                            Instagram-->
