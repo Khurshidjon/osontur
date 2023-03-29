@@ -91,8 +91,8 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                 ])->label(false); ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <?= Html::submitButton('Submit', ['class' => 'btn btn-success']) ?>
+<!--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                <?= Html::submitButton(Yii::t('submit', 'submit_button'), ['class' => 'btn btn-success']) ?>
             </div>
             <?php ActiveForm::end(); ?>
         </div>

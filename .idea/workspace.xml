@@ -6,6 +6,8 @@
       <change beforePath="$PROJECT_DIR$/common/messages/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/en/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/messages/ru/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/ru/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/messages/uz/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/uz/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/contacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/contacts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +207,7 @@
       <workItem from="1678419922067" duration="5388000" />
       <workItem from="1678429141177" duration="179000" />
       <workItem from="1679892234957" duration="2123000" />
-      <workItem from="1680062773907" duration="3364000" />
+      <workItem from="1680062773907" duration="3597000" />
     </task>
     <servers />
   </component>

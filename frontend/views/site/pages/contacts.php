@@ -53,7 +53,7 @@ $this->title = "Contacts";
                     </div>
                     <div class="col-lg-12">
                         <div class="submit_btn">
-                            <button class="boxed-btn4" type="submit">submit</button>
+                            <button class="boxed-btn4" type="submit"><?= Yii::t('submit', 'submit_button')?></button>
                         </div>
                     </div>
                 </div>

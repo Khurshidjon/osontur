@@ -24,5 +24,6 @@ return [
     'lux_hotel_content' => 'Traveling in a good mood is important and it cannot be imagined without luxury hotels',
     'travel_title' => 'Travel Guide',
     'travel_content' => 'We provide all the guidance to make you feel like you\'re at home on a wonderful trip.',
-    'travel_bron' => "Booking Tour"
+    'travel_bron' => "Booking Tour",
+    'submit_button' => "Submit"
 ];
