@@ -24,4 +24,5 @@ return [
     'lux_hotel_content' => 'Sayohatni yaxshi kayfiyatda o\'tkazish muhim ahamiyatga ega va buni hashamatli mehmonxonalarsiz tasovvur etib bo\'lmaydi',
     'travel_title' => 'Sayohat bo\'yicha qo\'llanma',
     'travel_content' => 'Ajoyib sayohatda huddi o\'z uyingizda yurgandek his qilishingiz uchun biz barcha yo\'l yo\'riqlarni ko\'rsatamiz',
+    'travel_bron' => "Bron Qilish"
 ];
