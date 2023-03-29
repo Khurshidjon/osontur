@@ -57,7 +57,7 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                         </div>
                         <div class="col-lg-12">
                             <div class="submit_btn">
-                                <button class="boxed-btn4" type="submit"><?= Yii::t('submit', 'submit_button')?></button>
+                                <button class="boxed-btn4" type="submit"><?= Yii::t('app', 'submit_button')?></button>
                             </div>
                         </div>
                     </div>
