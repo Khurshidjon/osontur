@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'title_uz',
                 'title_ru',
                 'title_en',
-                'content_uz:ntext',
+//                'content_uz:ntext',
                 [
                     'class' => ActionColumn::className(),
                     'urlCreator' => function ($action, Tours $model, $key, $index, $column) {
