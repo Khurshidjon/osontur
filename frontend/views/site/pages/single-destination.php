@@ -25,7 +25,7 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                 </div>
                 <div class="bordered_1px"></div>
                 <div class="contact_join">
-                    <h3>Contact for join</h3>
+                    <h3><?= Yii::t('app', 'booking')?></h3>
                     <?php $form = ActiveForm::begin(); ?>
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
