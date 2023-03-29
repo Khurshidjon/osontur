@@ -145,7 +145,7 @@ AppAsset::register($this);
                     <div class="footer_widget">
                         <div class="footer_logo">
                             <a href="#">
-                                <?= Html::img('template/img/logo.jpg', ['class' => 'img-fluid img-thumbnail',  'width' => '120']); ?>
+                                <?= Html::img('/template/img/logo.jpg', ['class' => 'img-fluid img-thumbnail',  'width' => '120']); ?>
                             </a>
                         </div>
                         <p>Toshkent shahri, Mirobod tumani, <br> AFROSIYOB KO'CHASI, FAROVON MFY, 14/2-UY <br>
