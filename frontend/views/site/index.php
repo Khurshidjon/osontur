@@ -265,12 +265,12 @@ use himiklab\yii2\recaptcha\ReCaptcha;
         <div class="row">
             <div class="col-lg-12">
                 <div class="video_wrap text-center">
-                    <h3><?= Yii::t('app', 'enjoy_video') ?></h3>
-                    <div class="video_icon">
-                        <a class="popup-video video_play_button" href="https://www.youtube.com/watch?v=f59dDEk57i0">
-                            <i class="fa fa-play"></i>
-                        </a>
-                    </div>
+                    <h3 style="font-size: 100px"><?php //Yii::t('app', 'enjoy_video') ?></h3>
+<!--                    <div class="video_icon">-->
+<!--                        <a class="popup-video video_play_button" href="https://www.youtube.com/watch?v=f59dDEk57i0">-->
+<!--                            <i class="fa fa-play"></i>-->
+<!--                        </a>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>

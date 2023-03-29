@@ -197,18 +197,35 @@ AppAsset::register($this);
                        </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-md-5 col-lg-5">
+                <div class="col-xl-4 col-md-4 col-lg-4">
                     <div class="footer_widget">
                         <div style="position:relative;overflow:hidden;">
-                            <a href="https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Toshkent</a><a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdAFpT0cFQFprfX54eX9qYg==/?ll=69.270371%2C41.298402&utm_medium=mapframe&utm_source=maps&z=17.78" style="color:#eee;font-size:12px;position:absolute;top:14px;">Afrosiyob koʻchasi, 14/2 — Yandex Xarita</a><iframe src="https://yandex.uz/map-widget/v1/?ll=69.270371%2C41.298402&mode=whatshere&whatshere%5Bpoint%5D=69.269464%2C41.298479&whatshere%5Bzoom%5D=17&z=17.78" width="100%" height="360" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe>
+                            <a href="https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Toshkent</a><a href="https://yandex.uz/maps/10335/tashkent/house/YkAYdAFpT0cFQFprfX54eX9qYg==/?ll=69.270371%2C41.298402&utm_medium=mapframe&utm_source=maps&z=17.78" style="color:#eee;font-size:12px;position:absolute;top:14px;">Afrosiyob koʻchasi, 14/2 — Yandex Xarita</a><iframe src="https://yandex.uz/map-widget/v1/?ll=69.270371%2C41.298402&mode=whatshere&whatshere%5Bpoint%5D=69.269464%2C41.298479&whatshere%5Bzoom%5D=17&z=17.78" width="100%" height="520" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-3 col-lg-3">
+                <div class="col-xl-4 col-md-4 col-lg-4">
                     <div class="">
-                        <a href="https://www.apelsin.uz/open-service?serviceId=498605713">
-                            <?= Html::img('/template/pay/uzumbank.png', ['class' => 'img-fluid img-thumbnail']); ?>
+                        <a target="_blank" href="https://www.apelsin.uz/open-service?serviceId=498605713">
+                            <?= Html::img('/template/pay/uzumbank.png', ['class' => 'img-fluid img-thumbnail w-75']); ?>
                         </a>
+                        <div class="mt-5">
+                            <h4 class="text-white">Способы оплаты / To'lov usullari</h4>
+                            <p>Вы можете совершать платежи:</p>
+                            <div class="">
+                                <p class="text-white">Наличными деньгами или через терминал в кассе в офисе</p>
+                                <p class="text-white">банковского перевода на расчетный счет <br>
+                                    Р/с: 2020 80009056 0427 5001 <br>
+                                    вАИКБ «Ипак Йули» МФО: 01101 <br>
+                                    ИНН:310 063 673 ОКЭД: 79900
+                                </p>
+                                <p class="text-white" style="text-decoration: underline">
+                                    <a target="_blank" class="text-white" href="https://www.apelsin.uz/open-service?serviceId=498605713">
+                                        приложения Uzum pay
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!--                <div class="col-xl-3 col-md-6 col-lg-3">-->
