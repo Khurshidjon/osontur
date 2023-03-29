@@ -185,7 +185,6 @@ AppAsset::register($this);
                        <div class="d-block d-lg-none d-xl-none">
                            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                <?= Yii::$app->language ?>
-                               <!--                                        --><?//= Yii::$app->request->url ?>
                            </button>
                            <div class="dropdown-menu">
                                <ul class="custom-list">
