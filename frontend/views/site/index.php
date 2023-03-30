@@ -310,17 +310,16 @@ use himiklab\yii2\recaptcha\ReCaptcha;
     </div>
 </div>
 <?php
-$js = <<<JS
-    // $('#my-captcha-image').on('click', function(e){
-    //     e.preventDefault();
-    //     $.ajax({
-    //         url: '/site/refresh-captcha',
-    //         success: (response) => {
-    //             $('#my-captcha-image').attr('src', response);         
-    //         }
-    //     })
-    // })
+if (Yii::$app->session->hasFlash('success')) {
+    $message = Yii::t('app', 'success_message');
+    $js = <<<JS
+Swal.fire({
+  icon: 'success',
+  title: `$message`,
+  showConfirmButton: false,
+  timer: 3500
+})
 JS;
-
-
-$this->registerJs($js, \yii\web\View::POS_READY); ?>
+    $this->registerJs($js, \yii\web\View::POS_READY);
+}
+?>

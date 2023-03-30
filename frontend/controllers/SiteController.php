@@ -101,6 +101,7 @@ class SiteController extends Controller
         if ($this->request->isPost) {
             if ($application->load($this->request->post())) {
                 if ($application->save()) {
+                    Yii::$app->session->setFlash('success', "User created successfully.");
                     $this->actionBooking($application);
                     return $this->response->redirect('/');
                 }
@@ -144,6 +145,7 @@ class SiteController extends Controller
         if ($this->request->isPost) {
             if ($application->load($this->request->post())) {
                 if ($application->save(false)) {
+                    Yii::$app->session->setFlash('success', "User created successfully.");
                     $this->actionBooking($application);
                     return $this->redirect(Yii::$app->request->referrer);
                 }
@@ -186,6 +188,7 @@ class SiteController extends Controller
         if ($this->request->isPost) {
             if ($application->load($this->request->post())) {
                 if ($application->save(false)) {
+                    Yii::$app->session->setFlash('success', "User created successfully.");
                     $this->actionBooking($application);
                     return $this->redirect(Yii::$app->request->referrer);
                 }

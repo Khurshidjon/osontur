@@ -25,5 +25,6 @@ return [
     'travel_title' => 'Travel Guide',
     'travel_content' => 'We provide all the guidance to make you feel like you\'re at home on a wonderful trip.',
     'travel_bron' => "Booking Tour",
-    'submit_button' => "Submit"
+    'submit_button' => "Submit",
+    'success_message' => "Your request will receive"
 ];

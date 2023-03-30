@@ -25,7 +25,7 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                 </div>
                 <div class="bordered_1px"></div>
                 <div class="contact_join">
-                    <h3><?= Yii::t('app', 'travel_bron')?></h3>
+                    <h3><?= Yii::t('app', 'travel_bron') ?></h3>
                     <?php $form = ActiveForm::begin(); ?>
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
@@ -38,7 +38,7 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                                 <?= $form->field($application, 'phone_number')->widget(\yii\widgets\MaskedInput::class, [
                                     'mask' => '99 999 99 99',
                                     'options' => [
-                                            'placeholder' => '90 123 45 67'
+                                        'placeholder' => '90 123 45 67'
                                     ]
                                 ])->label(false); ?>
                             </div>
@@ -50,14 +50,14 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                         </div>
                         <div class="col-lg-12">
                             <div class="single_input">
-                                <?= $form->field($application, 'reCaptcha')->widget(ReCaptcha::className(),[
+                                <?= $form->field($application, 'reCaptcha')->widget(ReCaptcha::className(), [
                                     'siteKey' => '6Lfj2NQkAAAAAKOAbf7wxT39eiwJ-bghs9Rgv-sK'
                                 ])->label(false); ?>
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="submit_btn">
-                                <button class="boxed-btn4" type="submit"><?= Yii::t('app', 'submit_button')?></button>
+                                <button class="boxed-btn4" type="submit"><?= Yii::t('app', 'submit_button') ?></button>
                             </div>
                         </div>
                     </div>
@@ -102,3 +102,18 @@ use himiklab\yii2\recaptcha\ReCaptcha;
         </div>
     </div>
 </div>
+
+<?php
+if (Yii::$app->session->hasFlash('success')) {
+    $message = Yii::t('app', 'success_message');
+    $js = <<<JS
+Swal.fire({
+  icon: 'success',
+  title: `$message`,
+  showConfirmButton: false,
+  timer: 3500
+})
+JS;
+$this->registerJs($js, \yii\web\View::POS_READY);
+}
+?>

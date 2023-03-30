@@ -92,3 +92,18 @@ $this->title = "Contacts";
         </div>
     </div>
 </section>
+
+<?php
+if (Yii::$app->session->hasFlash('success')) {
+    $message = Yii::t('app', 'success_message');
+    $js = <<<JS
+Swal.fire({
+  icon: 'success',
+  title: `$message`,
+  showConfirmButton: false,
+  timer: 3500
+})
+JS;
+    $this->registerJs($js, \yii\web\View::POS_READY);
+}
+?>

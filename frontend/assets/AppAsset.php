@@ -53,6 +53,7 @@ class AppAsset extends AssetBundle
         'js/jquery.validate.min.js',
         'js/mail-script.js',
         'js/main.js',
+        'alert/alert.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

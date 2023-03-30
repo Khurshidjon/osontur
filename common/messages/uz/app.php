@@ -25,5 +25,6 @@ return [
     'travel_title' => 'Sayohat bo\'yicha qo\'llanma',
     'travel_content' => 'Ajoyib sayohatda huddi o\'z uyingizda yurgandek his qilishingiz uchun biz barcha yo\'l yo\'riqlarni ko\'rsatamiz',
     'travel_bron' => "Bron Qilish",
-    'submit_button' => "Yuborish"
+    'submit_button' => "Yuborish",
+    'success_message' => "So'rovingiz qabul qilindi"
 ];
