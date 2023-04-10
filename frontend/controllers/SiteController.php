@@ -286,7 +286,7 @@ class SiteController extends Controller
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => "Sayohat yo'nalishini tanlang",
-                'reply_markup' => self::changeDestination($nsUser->language)
+                'reply_markup' => self::changeDestination('uz')
             ]);
 //            $telegram->sendMessage([
 //                'chat_id' => $telegram_id,
@@ -302,7 +302,7 @@ class SiteController extends Controller
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => 'Выберите направление тура',
-                'reply_markup' => self::changeDestination($nsUser->language)
+                'reply_markup' => self::changeDestination('ru')
             ]);
 //            $telegram->sendMessage([
 //                'chat_id' => $telegram_id,
