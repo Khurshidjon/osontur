@@ -333,9 +333,10 @@ class SiteController extends Controller
     {
         $destinations = Destinations::find()->where(['status' => 1])->all();
         $res = [];
+        $data = [];
         foreach ($destinations as $destination){
             $data['text'] = $destination->translateTg('title', $lang);
-            $res[] = $data;
+            $res[][] = $data;
         }
 
         $keyboard_share = json_encode([
