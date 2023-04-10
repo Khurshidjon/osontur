@@ -285,9 +285,14 @@ class SiteController extends Controller
             $nsUser->save(false);
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
-                'text' => "Siz bilan bog'lanish uchun telefon raqamingizni operator kodi bilan yuboring",
-                'reply_markup' => self::sharePhoneKeyboard('uz'),
+                'text' => "Sayohat yo'nalishini tanlang",
+                'reply_markup' => self::changeDestination($nsUser->language)
             ]);
+//            $telegram->sendMessage([
+//                'chat_id' => $telegram_id,
+//                'text' => "Siz bilan bog'lanish uchun telefon raqamingizni operator kodi bilan yuboring",
+//                'reply_markup' => self::sharePhoneKeyboard('uz'),
+//            ]);
             die;
         }
         if ($text == "🇷🇺 Русский") {
@@ -296,7 +301,7 @@ class SiteController extends Controller
             $nsUser->save(false);
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
-                'text' => $nsUser->language == 'uz' ? "Sayohat yo'nalishini tanlang" : 'Выберите направление тура',
+                'text' => 'Выберите направление тура',
                 'reply_markup' => self::changeDestination($nsUser->language)
             ]);
 //            $telegram->sendMessage([
