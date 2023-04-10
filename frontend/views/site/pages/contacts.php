@@ -46,7 +46,7 @@ $this->title = "Contacts";
                             <?= $form->field($application, 'message')->textarea(['placeholder' => 'Message', 'rows' => 7])->label(false); ?>
                         </div>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 mb-5">
                         <div class="single_input">
                             <?= $form->field($application, 'destination_id')->dropDownList(ArrayHelper::map(Destinations::find()->all(), 'id', $application->titleLoc()), ['prompt' => Yii::t('app', 'select_destination')])->label(false); ?>
                         </div>

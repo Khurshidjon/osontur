@@ -89,7 +89,9 @@ use common\models\Destinations;
                         'placeholder' => '90 123 45 67'
                     ]])->label(false); ?>
 
-                <?= $form->field($application, 'destination_id')->dropDownList(ArrayHelper::map(Destinations::find()->all(), 'id', $application->titleLoc()), ['prompt' => Yii::t('app', 'select_destination')])->label(false); ?>
+                <div class="mb-5">
+                    <?= $form->field($application, 'destination_id')->dropDownList(ArrayHelper::map(Destinations::find()->all(), 'id', $application->titleLoc()), ['prompt' => Yii::t('app', 'select_destination')])->label(false); ?>
+                </div>
                 <hr>
                 <?= $form->field($application, 'reCaptcha')->widget(ReCaptcha::className(),[
                         'siteKey' => '6Lfj2NQkAAAAAKOAbf7wxT39eiwJ-bghs9Rgv-sK'

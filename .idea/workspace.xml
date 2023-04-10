@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6826ea-8346-48c3-bc01-4163348a681c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/osontur.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/osontur.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/messages/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/en/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/messages/ru/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/ru/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/messages/uz/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/uz/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/Applications.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Applications.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/models/ApplicationSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/models/ApplicationSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/application/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/application/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/modules/admin/views/application/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/modules/admin/views/application/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/contacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/contacts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/pages/single-destination.php" afterDir="false" />
@@ -216,7 +207,7 @@
       <workItem from="1679892234957" duration="2123000" />
       <workItem from="1680062773907" duration="4442000" />
       <workItem from="1680175193712" duration="2319000" />
-      <workItem from="1681104305825" duration="5688000" />
+      <workItem from="1681104305825" duration="7362000" />
     </task>
     <servers />
   </component>

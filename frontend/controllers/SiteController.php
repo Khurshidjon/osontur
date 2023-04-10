@@ -205,6 +205,7 @@ class SiteController extends Controller
         $fio = $application->fio;
         $phone = $application->phone_number;
         $message = $application->message;
+        $destination = $application->destination;
 
         $admins = TelegramUser::find()->where(['role' => 2])->all();
         $text = '';
@@ -214,6 +215,10 @@ class SiteController extends Controller
 
         if ($message) {
             $text .= "<b>Xabar: </b>$message \n";
+        }
+
+        if ($destination) {
+            $text .= "<b>Yo'nalish: </b>$destination->title_uz \n";
         }
 
         $text .= "\n\n";
@@ -309,6 +314,7 @@ class SiteController extends Controller
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => self::lastMessage($nsUser->language),
+                'reply_markup' => false
             ]);
             die;
         }
