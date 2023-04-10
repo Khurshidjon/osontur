@@ -89,4 +89,9 @@ class Destinations extends \yii\db\ActiveRecord
         $lang = Yii::$app->language;
         return $this[$model.'_'.$lang];
     }
+
+    public function translateTg($model, $lang)
+    {
+        return $this[$model.'_'.$lang];
+    }
 }

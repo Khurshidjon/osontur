@@ -296,9 +296,14 @@ class SiteController extends Controller
             $nsUser->save(false);
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
-                'text' => "Отправьте номер телефона с кодом оператора, чтобы связаться с вами",
-                'reply_markup' => self::sharePhoneKeyboard('ru'),
+                'text' => $nsUser->language == 'uz' ? "Sayohat yo'nalishini tanlang" : 'Выберите направление тура',
+                'reply_markup' => self::changeDestination($nsUser->language)
             ]);
+//            $telegram->sendMessage([
+//                'chat_id' => $telegram_id,
+//                'text' => "Отправьте номер телефона с кодом оператора, чтобы связаться с вами",
+//                'reply_markup' => self::sharePhoneKeyboard('ru'),
+//            ]);
             die;
         }
         if ($nsUser->step == 2 && isset($contact)) {
@@ -310,7 +315,6 @@ class SiteController extends Controller
                 $app->phone_number = $nsUser->phone_number;
                 $app->save(false);
             }
-
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => self::lastMessage($nsUser->language),
@@ -319,6 +323,28 @@ class SiteController extends Controller
             die;
         }
     }
+
+    public static function changeDestination($lang)
+    {
+        $destinations = Destinations::find()->where(['status' => 1])->all();
+        $res = [];
+        foreach ($destinations as $destination){
+            $data['text'] = $destination->translateTg($destination, $lang);
+            $res[] = $data;
+        }
+
+        $keyboard_share = json_encode([
+            'keyboard' => [
+                [
+                    $res
+                ]
+            ],
+            'one_time_keyboard' => true,
+            'resize_keyboard' => true,
+        ]);
+        return $keyboard_share;
+    }
+
 
     public static function lastMessage($lang)
     {
