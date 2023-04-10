@@ -334,7 +334,7 @@ class SiteController extends Controller
         $destinations = Destinations::find()->where(['status' => 1])->all();
         $res = [];
         foreach ($destinations as $destination){
-            $data['text'] = $destination->translateTg($destination, $lang);
+            $data['text'] = $destination->translateTg('title', $lang);
             $res[] = $data;
         }
 
