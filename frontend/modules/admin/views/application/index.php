@@ -5,7 +5,8 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
-
+use yii\helpers\ArrayHelper;
+use common\models\Destinations;
 /** @var yii\web\View $this */
 /** @var frontend\modules\admin\models\ApplicationSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
@@ -39,6 +40,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'fio',
                 'phone_number',
                 'status',
+                [
+                    'attribute' => 'destination_id',
+                    'value' => function($model){
+                        return $model->destination ? $model->destination->title_uz : '';
+                    },
+                    'filter' => ArrayHelper::map(Destinations::find()->all(), 'id', 'title_uz')
+                ],
                 [
                     'attribute' => 'created_at',
                     'value' => function($model){

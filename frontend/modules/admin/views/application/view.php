@@ -35,9 +35,25 @@ $this->params['breadcrumbs'][] = $this->title;
                 'id',
                 'fio',
                 'phone_number',
+                [
+                    'attribute' => 'message',
+                    'value' => function($model){
+                        return $model->message;
+                    }
+                ],
+                [
+                    'attribute' => 'destination_id',
+                    'value' => function($model){
+                        return $model->destination ? $model->destination->title_uz : '';
+                    }
+                ],
                 'status',
-                'created_at',
-                'updated_at',
+                [
+                    'attribute' => 'created_at',
+                    'value' => function($model){
+                        return date("d.m.Y H:i:s", $model->created_at);
+                    }
+                ],
             ],
         ]) ?>
 

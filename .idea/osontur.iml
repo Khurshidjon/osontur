@@ -2,15 +2,14 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/common/tests/_support" isTestSource="true" packagePrefix="common\tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/backend/tests" isTestSource="true" packagePrefix="backend\tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/frontend/tests/_support" isTestSource="true" packagePrefix="frontend\tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/frontend/tests" isTestSource="true" packagePrefix="frontend\tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/common/tests" isTestSource="true" packagePrefix="common\tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/backend/tests/_support" isTestSource="true" packagePrefix="backend\tests\" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/2amigos/yii2-tinymce-widget" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/common/tests/_support" isTestSource="true" packagePrefix="common\tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/frontend/tests/_support" isTestSource="true" packagePrefix="frontend\tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/tests" isTestSource="true" packagePrefix="backend\tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/common/tests" isTestSource="true" packagePrefix="common\tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/frontend/tests" isTestSource="true" packagePrefix="frontend\tests\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/aki/yii2-bot-telegram" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/gherkin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap" />
@@ -42,6 +41,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-krajee-base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-fileinput" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-select2" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lubosdz/yii2-captcha-extended" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mihaildev/yii2-ckeditor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
@@ -79,6 +79,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/resource-operations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/type" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/select2/select2" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/skeeks/yii2-multi-language" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/browser-kit" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
@@ -102,7 +103,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/string" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/tinymce/tinymce" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-bootstrap5" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-composer" />

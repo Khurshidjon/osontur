@@ -1,7 +1,7 @@
 <?php
 
-use yii\bootstrap5\Html;
-use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
+use common\models\Destinations;
 use yii\bootstrap5\ActiveForm;
 use himiklab\yii2\recaptcha\ReCaptcha;
 
@@ -46,6 +46,11 @@ use himiklab\yii2\recaptcha\ReCaptcha;
                         <div class="col-lg-12">
                             <div class="single_input">
                                 <?= $form->field($application, 'message')->textarea(['placeholder' => 'Message'])->label(false); ?>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="single_input">
+                                <?= $form->field($application, 'destination_id')->dropDownList(ArrayHelper::map(Destinations::find()->all(), 'id', $application->titleLoc()), ['prompt' => Yii::t('app', 'select_destination')])->label(false); ?>
                             </div>
                         </div>
                         <div class="col-lg-12">

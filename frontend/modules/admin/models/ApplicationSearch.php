@@ -17,7 +17,7 @@ class ApplicationSearch extends Applications
     public function rules()
     {
         return [
-            [['id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['id', 'status', 'created_at', 'updated_at', 'destination_id'], 'integer'],
             [['fio', 'phone_number'], 'safe'],
         ];
     }
@@ -60,6 +60,7 @@ class ApplicationSearch extends Applications
         $query->andFilterWhere([
             'id' => $this->id,
             'status' => $this->status,
+            'destination_id' => $this->destination_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);

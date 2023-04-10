@@ -101,8 +101,8 @@
       <path value="$PROJECT_DIR$/vendor/lubosdz/yii2-captcha-extended" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-httpclient" />
       <path value="$PROJECT_DIR$/vendor/himiklab/yii2-recaptcha-widget" />
-      <path value="$PROJECT_DIR$/vendor/tinymce/tinymce" />
-      <path value="$PROJECT_DIR$/vendor/2amigos/yii2-tinymce-widget" />
+      <path value="$PROJECT_DIR$/vendor/select2/select2" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

@@ -16,6 +16,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string|null $email
  * @property string|null $answer_from_phone
  * @property string|null $answer_from_email
+ * @property int|null $destination_id
  * @property int|null $created_at
  * @property int|null $updated_at
  */
@@ -51,7 +52,7 @@ class Applications extends \yii\db\ActiveRecord
         }
 
         return [
-            [['status', 'created_at', 'updated_at', 'answer_from_email', 'answer_from_phone'], 'integer'],
+            [['status', 'created_at', 'updated_at', 'answer_from_email', 'answer_from_phone', 'destination_id'], 'integer'],
             [['fio', 'phone_number', 'email'], 'string', 'max' => 255],
             [['message'], 'string', 'max' => 500],
             [['fio', 'phone_number'], 'required'],
@@ -73,5 +74,24 @@ class Applications extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
+    }
+
+    public function getDestination()
+    {
+        return $this->hasOne(Destinations::class, ['id' => 'destination_id']);
+    }
+
+    public function titleLoc()
+    {
+        $lang = Yii::$app->language;
+        $res = 'title_uz';
+        if ($lang == 'uz'){
+            $res = 'title_uz';
+        }elseif($lang == 'ru'){
+            $res = 'title_ru';
+        }else{
+            $res = 'title_en';
+        }
+        return $res;
     }
 }
