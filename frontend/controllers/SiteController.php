@@ -341,9 +341,7 @@ class SiteController extends Controller
 
         $keyboard_share = json_encode([
             'keyboard' => [
-                [
-                    $res
-                ]
+                   $res
             ],
             'one_time_keyboard' => true,
             'resize_keyboard' => true,
