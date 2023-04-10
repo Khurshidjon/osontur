@@ -314,7 +314,7 @@ class SiteController extends Controller
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => self::lastMessage($nsUser->language),
-                'reply_markup' => false
+                'reply_markup' => null
             ]);
             die;
         }
