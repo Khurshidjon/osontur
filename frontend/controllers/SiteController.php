@@ -211,7 +211,7 @@ class SiteController extends Controller
         $text = '';
         $text .= "<b>Yangi buyurtma</b>\n\n";
         $text .= "<b>FIO: </b>$fio\n";
-        if (strlen($phone) <= 12){
+        if (strlen($phone) == 12){
             $text .= "<b>Tel: </b> +998$phone \n";
         }else{
             $text .= "<b>Tel: </b> $phone \n";
