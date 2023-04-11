@@ -417,18 +417,17 @@ class SiteController extends Controller
 
     public static function settingButtons($lang)
     {
-        $text_keyboard_go_site = $lang == 'uz' ? "🌐 Saytnga o'tish" : "🌐 Перейти на сайт";
         $text_keyboard_new_app = $lang == 'uz' ? "🆕 Yangi ariza yuborish" : "🆕 Отправить новую заявку";
-        $text_keyboard_settings = $lang == 'uz' ? "⚙ Sozlamalar" : "⚙ Настройки";
+        $text_keyboard_settings = $lang == 'uz' ? "⚙ Botni qayta ishga turshirish" : "⚙ Перезапустите бота";
         $keyboard_share = json_encode([
             'keyboard' => [
                 [
                     [
                         'text' => $text_keyboard_new_app,
                     ],
-//                    [
-//                        'text' => $text_keyboard_settings,
-//                    ],
+                    [
+                        'text' => $text_keyboard_settings,
+                    ],
                 ]
             ],
             'resize_keyboard' => true,
