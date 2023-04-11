@@ -211,7 +211,11 @@ class SiteController extends Controller
         $text = '';
         $text .= "<b>Yangi buyurtma</b>\n\n";
         $text .= "<b>FIO: </b>$fio\n";
-        $text .= "<b>Tel: </b> +998$phone \n";
+        if (strlen($phone) > 7){
+            $text .= "<b>Tel: </b> $phone \n";
+        }else{
+            $text .= "<b>Tel: </b> +998$phone \n";
+        }
 
         if ($message) {
             $text .= "<b>Xabar: </b>$message \n";
