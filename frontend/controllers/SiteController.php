@@ -245,6 +245,7 @@ class SiteController extends Controller
         $contact = $telegram->input->message->contact;
         $full_name = $telegram->input->message->chat->first_name . ' ' . $telegram->input->message->chat->last_name;
         $nsUser = TelegramUser::findOne(['telegram_id' => $telegram_id]);
+        $destination_id = null;
 
         $change_btn = json_encode([
             'keyboard' => [
@@ -312,6 +313,7 @@ class SiteController extends Controller
             $destination = Destinations::find()->where(['like', $field, $text])->one();
 
             if ($destination) {
+                $nsUser->temp_destination_id = $destination->id;
                 $nsUser->step = 3;
                 $nsUser->save(false);
                 $telegram->sendMessage([
@@ -330,14 +332,15 @@ class SiteController extends Controller
                 $app = new Applications();
                 $app->fio = $nsUser->nickname;
                 $app->phone_number = $nsUser->phone_number;
+                $app->destination_id = $nsUser->temp_destination_id;
                 $app->save(false);
+                $telegram->sendMessage([
+                    'chat_id' => $telegram_id,
+                    'text' => self::lastMessage($nsUser->language, $app),
+                    'reply_markup' => null
+                ]);
+                die;
             }
-            $telegram->sendMessage([
-                'chat_id' => $telegram_id,
-                'text' => self::lastMessage($nsUser->language),
-                'reply_markup' => null
-            ]);
-            die;
         }
     }
 
@@ -359,9 +362,31 @@ class SiteController extends Controller
     }
 
 
-    public static function lastMessage($lang)
+    public static function lastMessage($lang, $app)
     {
-        return $lang == 'uz' ? "Arizangiz qabul qilindi, tez orada operatorlarimiz siz bilan bog'lanadi\n\nQo'shimcha ma'lumotlar bilan https://osontur.uz sahifasi orqali tanishishingiz mumkin" : "Ваша заявка принята, наши операторы свяжутся с вами в ближайшее время\n\nДополнительную информацию вы можете найти на https://osontur.uz/ru";
+        $msg = "";
+        $msg .= $lang == 'uz' ? "Arizangiz qabul qilindi, tez orada operatorlarimiz siz bilan bog'lanadi\n\nQo'shimcha ma'lumotlar bilan https://osontur.uz sahifasi orqali tanishishingiz mumkin" : "Ваша заявка принята, наши операторы свяжутся с вами в ближайшее время\n\nДополнительную информацию вы можете найти на https://osontur.uz/ru \n";
+        if ($app){
+            $fio = $app->fio;
+            $phone = $app->phone_number;
+            $msg .= "";
+            if ($lang == 'ru'){
+                $msg .= "<b>Ваш новый заказ</b> \n\n";
+                $msg .= "<b>ФИО: </b>$fio\n";
+                $msg .= "<b>Тел: </b> +998$phone \n";
+                if ($app->destination != null){
+                    $msg .= "<b>Направление: </b> $app->destination->translateTg('title', $lang) \n";
+                }
+            }else{
+                $msg .= "<b>Yangi buyurtmangiz</b> \n\n";
+                $msg .= "<b>FIO: </b>$fio\n";
+                $msg .= "<b>Tel: </b> +998$phone \n";
+                if ($app->destination != null){
+                    $msg .= "<b>Yo'nalish: </b> $app->destination->translateTg('title', $lang) \n";
+                }
+            }
+        }
+        return $msg;
     }
 
     public static function sharePhoneKeyboard($lang)

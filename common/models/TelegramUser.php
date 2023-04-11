@@ -16,6 +16,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string|null $telegram_id
  * @property string|null $user_id
  * @property int|null $step
+ * @property int|null $temp_destination_id
  * @property int|null $status
  * @property int|null $created_at
  * @property int|null $updated_at
@@ -43,7 +44,7 @@ class TelegramUser extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['role', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['role', 'status', 'temp_destination_id', 'created_at', 'updated_at'], 'integer'],
             [['username', 'telegram_id', 'user_id', 'nickname', 'fio'], 'string', 'max' => 255],
         ];
     }
