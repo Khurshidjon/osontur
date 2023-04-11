@@ -271,8 +271,8 @@ class SiteController extends Controller
             ]);
             die;
         }
-        if ($text == "/start") {
-            $nsUser->save(false);
+
+        if ($text == "/start" || $text == "⚙ Перезапустите бота" || $text == "⚙ Botni qayta ishga turshirish") {
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => "🇺🇿 Tilni tanlang \n\n 🇷🇺 Выберите язык",
@@ -367,31 +367,31 @@ class SiteController extends Controller
     public static function lastMessage($lang, $app)
     {
         $msg = null;
-        if ($lang == 'ru') {
-            $msg .= "Ваша заявка принята, наши операторы свяжутся с вами в ближайшее время\n\nДополнительную информацию вы можете найти на https://osontur.uz/ru\n";
-        } else {
-            $msg .= "Arizangiz qabul qilindi, tez orada operatorlarimiz siz bilan bog'lanadi\n\nQo'shimcha ma'lumotlar bilan https://osontur.uz sahifasi orqali tanishishingiz mumkin\n";
-        }
-
         if ($app) {
             $fio = $app->fio;
             $phone = $app->phone_number;
             $destination = $app->destination->translateTg('title', $lang);
-            $msg .= "";
             if ($lang == "ru") {
-                $msg .= "<b>Ваш новый заказ</b> \n\n";
+                $msg .= "<b>Ваш новый заказ</b>\n";
                 $msg .= "<b>ФИО: </b>$fio\n";
                 $msg .= "<b>Тел: </b> +998$phone \n";
                 if ($app->destination != null) {
                     $msg .= "<b>Направление: </b>  $destination \n";
                 }
             } else {
-                $msg .= "<b>Yangi buyurtmangiz</b> \n\n";
+                $msg .= "<b>Yangi buyurtmangiz</b>\n";
                 $msg .= "<b>FIO: </b>$fio\n";
                 $msg .= "<b>Tel: </b> $phone \n";
                 if ($app->destination != null) {
                     $msg .= "<b>Yo'nalish: </b> $destination \n";
                 }
+            }
+            $msg .= "\n";
+
+            if ($lang == 'ru') {
+                $msg .= "Ваша заявка принята, наши операторы свяжутся с вами в ближайшее время\n\nДополнительную информацию вы можете найти на https://osontur.uz/ru\n";
+            } else {
+                $msg .= "Arizangiz qabul qilindi, tez orada operatorlarimiz siz bilan bog'lanadi\n\nQo'shimcha ma'lumotlar bilan https://osontur.uz sahifasi orqali tanishishingiz mumkin\n";
             }
         }
         return $msg;
