@@ -299,14 +299,31 @@ class SiteController extends Controller
                 'text' => 'Выберите направление тура',
                 'reply_markup' => self::changeDestinationKeyboard('ru')
             ]);
-//            $telegram->sendMessage([
-//                'chat_id' => $telegram_id,
-//                'text' => "Отправьте номер телефона с кодом оператора, чтобы связаться с вами",
-//                'reply_markup' => self::sharePhoneKeyboard('ru'),
-//            ]);
             die;
         }
-        if ($nsUser->step == 2 && isset($contact)) {
+        if ($nsUser->step == 2) {
+            if ($nsUser->language == 'uz') {
+                $field = 'title_uz';
+                $contact_text = "Siz bilan bog'lanish uchun telefon raqamingizni operator kodi bilan yuboring";
+            } else {
+                $field = 'title_ru';
+                $contact_text = "Отправьте номер телефона с кодом оператора, чтобы связаться с вами";
+            }
+            $destination = Destinations::find()->where(['like', $field, $text])->one();
+
+            if ($destination) {
+                $nsUser->step = 3;
+                $nsUser->save(false);
+                $telegram->sendMessage([
+                    'chat_id' => $telegram_id,
+                    'text' => $contact_text,
+                    'reply_markup' => self::sharePhoneKeyboard($nsUser->language),
+                ]);
+                die();
+            }
+        }
+
+        if ($nsUser->step == 3 && isset($contact)) {
             $nsUser->phone_number = $contact['phone_number'];
             $nsUser->step = 3; // save contact
             if ($nsUser->save(false)) {
@@ -329,7 +346,7 @@ class SiteController extends Controller
         $destinations = Destinations::find()->where(['status' => 1])->all();
         $res = [];
         $data = [];
-        foreach ($destinations as $destination){
+        foreach ($destinations as $destination) {
             $data['text'] = $destination->translateTg('title', $lang);
             $res[][] = $data;
         }
