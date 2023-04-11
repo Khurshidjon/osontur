@@ -227,7 +227,8 @@ class SiteController extends Controller
 
         $text .= "\n\n";
 
-        $text .= "<b>Agar yuborilgan raqam telegramda mavjud bo'lsa unga yozish: </b>" . str_replace(" ", "", "https://t.me/+998" . $phone);
+        $phone_number = $type == 1 ? "https://t.me/+998" . $phone : "https://t.me/" . $phone;
+        $text .= "<b>Agar yuborilgan raqam telegramda mavjud bo'lsa unga yozish: </b>" . str_replace(" ", "", );
 
         foreach ($admins as $admin) {
             $chat_id = $admin->telegram_id;
@@ -242,7 +243,6 @@ class SiteController extends Controller
 
     public function actionBot()
     {
-//        vd(strlen("+998990005795"));
         $telegram = Yii::$app->telegram;
         $text = $telegram->input->message->text;
         $username = $telegram->input->message->chat->username;
