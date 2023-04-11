@@ -286,13 +286,8 @@ class SiteController extends Controller
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => "Sayohat yo'nalishini tanlang",
-                'reply_markup' => self::changeDestination('uz')
+                'reply_markup' => self::changeDestinationKeyboard('uz')
             ]);
-//            $telegram->sendMessage([
-//                'chat_id' => $telegram_id,
-//                'text' => "Siz bilan bog'lanish uchun telefon raqamingizni operator kodi bilan yuboring",
-//                'reply_markup' => self::sharePhoneKeyboard('uz'),
-//            ]);
             die;
         }
         if ($text == "🇷🇺 Русский") {
@@ -302,7 +297,7 @@ class SiteController extends Controller
             $telegram->sendMessage([
                 'chat_id' => $telegram_id,
                 'text' => 'Выберите направление тура',
-                'reply_markup' => self::changeDestination('ru')
+                'reply_markup' => self::changeDestinationKeyboard('ru')
             ]);
 //            $telegram->sendMessage([
 //                'chat_id' => $telegram_id,
@@ -329,7 +324,7 @@ class SiteController extends Controller
         }
     }
 
-    public static function changeDestination($lang)
+    public static function changeDestinationKeyboard($lang)
     {
         $destinations = Destinations::find()->where(['status' => 1])->all();
         $res = [];
@@ -340,10 +335,7 @@ class SiteController extends Controller
         }
 
         $keyboard_share = json_encode([
-            'keyboard' => [
-                   $res
-            ],
-            'one_time_keyboard' => true,
+            'keyboard' => $res,
             'resize_keyboard' => true,
         ]);
         return $keyboard_share;
