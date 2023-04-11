@@ -280,7 +280,8 @@ class SiteController extends Controller
             ]);
             die;
         }
-        if ($text == "🇺🇿 O'zbek") {
+
+        if ($text == "🇺🇿 O'zbek" || $text = "🆕 Yangi ariza yuborish") {
             $nsUser->language = 'uz';
             $nsUser->step = 2; //save lang
             $nsUser->save(false);
@@ -291,7 +292,7 @@ class SiteController extends Controller
             ]);
             die;
         }
-        if ($text == "🇷🇺 Русский") {
+        if ($text == "🇷🇺 Русский" || $text = "🆕 Отправить новую заявку") {
             $nsUser->language = 'ru';
             $nsUser->step = 2; //save lang
             $nsUser->save(false);
@@ -387,7 +388,7 @@ class SiteController extends Controller
             } else {
                 $msg .= "<b>Yangi buyurtmangiz</b> \n\n";
                 $msg .= "<b>FIO: </b>$fio\n";
-                $msg .= "<b>Tel: </b> +998$phone \n";
+                $msg .= "<b>Tel: </b> $phone \n";
                 if ($app->destination != null) {
                     $msg .= "<b>Yo'nalish: </b> $destination \n";
                 }
@@ -417,15 +418,17 @@ class SiteController extends Controller
     public static function settingButtons($lang)
     {
         $text_keyboard_go_site = $lang == 'uz' ? "🌐 Saytnga o'tish" : "🌐 Перейти на сайт";
-        $text_keyboard_new_app = $lang == 'uz' ? "🌐 Saytnga o'tish" : "🌐 Перейти на сайт";
-        $text_keyboard_settings = $lang == 'uz' ? "📞 Telefon raqamni yuborish" : "📞 Отправить номер телефона";
+        $text_keyboard_new_app = $lang == 'uz' ? "🆕 Yangi ariza yuborish" : "🆕 Отправить новую заявку";
+        $text_keyboard_settings = $lang == 'uz' ? "⚙ Sozlamalar" : "⚙ Настройки";
         $keyboard_share = json_encode([
             'keyboard' => [
                 [
                     [
-                        'text' => $text_keyboard_go_site,
-                        'url' => "https://osontur.uz"
+                        'text' => $text_keyboard_new_app,
                     ],
+//                    [
+//                        'text' => $text_keyboard_settings,
+//                    ],
                 ]
             ],
             'resize_keyboard' => true,
