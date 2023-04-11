@@ -341,6 +341,7 @@ class SiteController extends Controller
                     'reply_markup' => self::settingButtons($nsUser->language),
                     'parse_mode' => 'HTML'
                 ]);
+                $this->actionBooking($app);
                 die;
             }
         }
