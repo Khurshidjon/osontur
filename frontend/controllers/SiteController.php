@@ -375,14 +375,14 @@ class SiteController extends Controller
                 $msg .= "<b>ФИО: </b>$fio\n";
                 $msg .= "<b>Тел: </b> +998$phone \n";
                 if ($app->destination != null){
-                    $msg .= "<b>Направление: </b> $app->destination->translateTg('title', $lang) \n";
+//                    $msg .= "<b>Направление: </b> $app->destination->translateTg('title', $lang) \n";
                 }
             }else{
                 $msg .= "<b>Yangi buyurtmangiz</b> \n\n";
                 $msg .= "<b>FIO: </b>$fio\n";
                 $msg .= "<b>Tel: </b> +998$phone \n";
                 if ($app->destination != null){
-                    $msg .= "<b>Yo'nalish: </b> $app->destination->translateTg('title', $lang) \n";
+//                    $msg .= "<b>Yo'nalish: </b> $app->destination->translateTg('title', $lang) \n";
                 }
             }
         }
