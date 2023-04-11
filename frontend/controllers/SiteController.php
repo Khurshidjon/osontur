@@ -424,6 +424,7 @@ class SiteController extends Controller
                 [
                     [
                         'text' => $text_keyboard_go_site,
+                        'url' => "https://osontur.uz"
                     ],
                 ]
             ],
