@@ -281,7 +281,7 @@ class SiteController extends Controller
             die;
         }
 
-        if ($text == "🇺🇿 O'zbek" || $text = "🆕 Yangi ariza yuborish") {
+        if ($text == "🇺🇿 O'zbek" || $text == "🆕 Yangi ariza yuborish") {
             $nsUser->language = 'uz';
             $nsUser->step = 2; //save lang
             $nsUser->save(false);
@@ -292,7 +292,7 @@ class SiteController extends Controller
             ]);
             die;
         }
-        if ($text == "🇷🇺 Русский" || $text = "🆕 Отправить новую заявку") {
+        if ($text == "🇷🇺 Русский" || $text == "🆕 Отправить новую заявку") {
             $nsUser->language = 'ru';
             $nsUser->step = 2; //save lang
             $nsUser->save(false);
