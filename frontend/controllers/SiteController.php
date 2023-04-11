@@ -228,7 +228,7 @@ class SiteController extends Controller
         $text .= "\n\n";
 
         $phone_number = $type == 1 ? "https://t.me/+998" . $phone : "https://t.me/" . $phone;
-        $text .= "<b>Agar yuborilgan raqam telegramda mavjud bo'lsa unga yozish: </b>" . str_replace(" ", "", );
+        $text .= "<b>Agar yuborilgan raqam telegramda mavjud bo'lsa unga yozish: </b>" . str_replace(" ", "", $phone_number);
 
         foreach ($admins as $admin) {
             $chat_id = $admin->telegram_id;
