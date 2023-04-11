@@ -337,7 +337,8 @@ class SiteController extends Controller
                 $telegram->sendMessage([
                     'chat_id' => $telegram_id,
                     'text' => self::lastMessage($nsUser->language, $app),
-                    'reply_markup' => null
+                    'reply_markup' => self::settingButtons($nsUser->language),
+                    'parse_mode' => 'HTML'
                 ]);
                 die;
             }
@@ -364,25 +365,31 @@ class SiteController extends Controller
 
     public static function lastMessage($lang, $app)
     {
-        $msg = "";
-        $msg .= $lang == 'uz' ? "Arizangiz qabul qilindi, tez orada operatorlarimiz siz bilan bog'lanadi\n\nQo'shimcha ma'lumotlar bilan https://osontur.uz sahifasi orqali tanishishingiz mumkin" : "Ваша заявка принята, наши операторы свяжутся с вами в ближайшее время\n\nДополнительную информацию вы можете найти на https://osontur.uz/ru \n";
-        if ($app){
+        $msg = null;
+        if ($lang == 'ru') {
+            $msg .= "Ваша заявка принята, наши операторы свяжутся с вами в ближайшее время\n\nДополнительную информацию вы можете найти на https://osontur.uz/ru\n";
+        } else {
+            $msg .= "Arizangiz qabul qilindi, tez orada operatorlarimiz siz bilan bog'lanadi\n\nQo'shimcha ma'lumotlar bilan https://osontur.uz sahifasi orqali tanishishingiz mumkin\n";
+        }
+
+        if ($app) {
             $fio = $app->fio;
             $phone = $app->phone_number;
+            $destination = $app->destination->translateTg('title', $lang);
             $msg .= "";
-            if ($lang == 'ru'){
+            if ($lang == "ru") {
                 $msg .= "<b>Ваш новый заказ</b> \n\n";
                 $msg .= "<b>ФИО: </b>$fio\n";
                 $msg .= "<b>Тел: </b> +998$phone \n";
-                if ($app->destination != null){
-//                    $msg .= "<b>Направление: </b> $app->destination->translateTg('title', $lang) \n";
+                if ($app->destination != null) {
+                    $msg .= "<b>Направление: </b>  $destination \n";
                 }
-            }else{
+            } else {
                 $msg .= "<b>Yangi buyurtmangiz</b> \n\n";
                 $msg .= "<b>FIO: </b>$fio\n";
                 $msg .= "<b>Tel: </b> +998$phone \n";
-                if ($app->destination != null){
-//                    $msg .= "<b>Yo'nalish: </b> $app->destination->translateTg('title', $lang) \n";
+                if ($app->destination != null) {
+                    $msg .= "<b>Yo'nalish: </b> $destination \n";
                 }
             }
         }
@@ -407,6 +414,23 @@ class SiteController extends Controller
         return $keyboard_share;
     }
 
+    public static function settingButtons($lang)
+    {
+        $text_keyboard_go_site = $lang == 'uz' ? "🌐 Saytnga o'tish" : "🌐 Перейти на сайт";
+        $text_keyboard_new_app = $lang == 'uz' ? "🌐 Saytnga o'tish" : "🌐 Перейти на сайт";
+        $text_keyboard_settings = $lang == 'uz' ? "📞 Telefon raqamni yuborish" : "📞 Отправить номер телефона";
+        $keyboard_share = json_encode([
+            'keyboard' => [
+                [
+                    [
+                        'text' => $text_keyboard_go_site,
+                    ],
+                ]
+            ],
+            'resize_keyboard' => true,
+        ]);
+        return $keyboard_share;
+    }
 
     /**
      * Logs in a user.
