@@ -211,7 +211,7 @@ class SiteController extends Controller
         $text = '';
         $text .= "<b>Yangi buyurtma</b>\n\n";
         $text .= "<b>FIO: </b>$fio\n";
-        if (strlen($phone) == 12){
+        if (strlen($phone) < 13){
             $text .= "<b>Tel: </b> +998$phone \n";
         }else{
             $text .= "<b>Tel: </b> $phone \n";
@@ -242,6 +242,7 @@ class SiteController extends Controller
 
     public function actionBot()
     {
+//        vd(strlen("+998990005795"));
         $telegram = Yii::$app->telegram;
         $text = $telegram->input->message->text;
         $username = $telegram->input->message->chat->username;
