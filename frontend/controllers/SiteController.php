@@ -102,7 +102,7 @@ class SiteController extends Controller
             if ($application->load($this->request->post())) {
                 if ($application->save()) {
                     Yii::$app->session->setFlash('success', "User created successfully.");
-                    $this->actionBooking($application);
+                    $this->actionBooking($application, 1);
                     return $this->response->redirect('/');
                 }
             }
@@ -146,7 +146,7 @@ class SiteController extends Controller
             if ($application->load($this->request->post())) {
                 if ($application->save(false)) {
                     Yii::$app->session->setFlash('success', "User created successfully.");
-                    $this->actionBooking($application);
+                    $this->actionBooking($application, 1);
                     return $this->redirect(Yii::$app->request->referrer);
                 }
             }
@@ -189,7 +189,7 @@ class SiteController extends Controller
             if ($application->load($this->request->post())) {
                 if ($application->save(false)) {
                     Yii::$app->session->setFlash('success', "User created successfully.");
-                    $this->actionBooking($application);
+                    $this->actionBooking($application, 1);
                     return $this->redirect(Yii::$app->request->referrer);
                 }
             }
@@ -200,7 +200,7 @@ class SiteController extends Controller
     }
 
 
-    public function actionBooking($application)
+    public function actionBooking($application, $type)
     {
         $fio = $application->fio;
         $phone = $application->phone_number;
@@ -211,7 +211,7 @@ class SiteController extends Controller
         $text = '';
         $text .= "<b>Yangi buyurtma</b>\n\n";
         $text .= "<b>FIO: </b>$fio\n";
-        if (strlen($phone) < 13){
+        if ($type == 1){
             $text .= "<b>Tel: </b> +998$phone \n";
         }else{
             $text .= "<b>Tel: </b> $phone \n";
@@ -346,7 +346,7 @@ class SiteController extends Controller
                     'reply_markup' => self::settingButtons($nsUser->language),
                     'parse_mode' => 'HTML'
                 ]);
-                $this->actionBooking($app);
+                $this->actionBooking($app, 2);
                 die;
             }
         }
@@ -380,7 +380,7 @@ class SiteController extends Controller
             if ($lang == "ru") {
                 $msg .= "<b>Ваш новый заказ</b>\n";
                 $msg .= "<b>ФИО: </b>$fio\n";
-                $msg .= "<b>Тел: </b> +998$phone \n";
+                $msg .= "<b>Тел: </b> $phone \n";
                 if ($app->destination != null) {
                     $msg .= "<b>Направление: </b>  $destination \n";
                 }
