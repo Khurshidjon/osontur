@@ -212,7 +212,7 @@ class SiteController extends Controller
         $text .= "<b>Yangi buyurtma</b>\n\n";
         $text .= "<b>FIO: </b>$fio\n";
         if ($type == 1){
-            $text .= "<b>Tel: </b> +998$phone \n";
+            $text .= "<b>Tel: </b> $phone \n";
         }else{
             $text .= "<b>Tel: </b> $phone \n";
         }
